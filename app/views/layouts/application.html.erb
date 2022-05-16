@@ -6,7 +6,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%# *= require 'reset.css' %>
     <%= javascript_include_tag 'application' %>
+    <script>
+      window.loginPhoto = "<%= image_url('loginPhoto.jpg')%>"
+      window.signupPhoto = "<%= image_url('signupPhoto.jpg')%>" 
+    </script>
   </head>
 
   <body>
