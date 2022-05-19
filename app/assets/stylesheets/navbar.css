@@ -1,0 +1,117 @@
+
+
+.navbar-page-struct {
+    height: 9vh;
+    width: 100%;
+    /* border: 5px solid yellowgreen; */
+
+}
+
+.navbar-structure {
+    /* border: 3px solid green; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-left {
+    display: flex;
+    /* border: 2px solid red; */
+    width: 40%;
+    height: 100%;
+    font-size: 32px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-right {
+    display: flex;
+    /* border: 2px solid purple; */
+    width: 30%;
+    font-size: 14px;
+    justify-content: end;
+}
+
+.navbar-right-signup,
+.navbar-right-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+.navbar-right-login:hover,
+.navbar-right-signup:hover {
+    cursor: pointer;
+    background-color: #ececec;
+}
+
+.navbar-link {
+    text-decoration: none;
+}
+
+.eventbrite-navbar-link {
+    /* font-family: Raleway-Black; */
+    /* border: 2px solid orange; */
+    font-size: 30px;
+    font-weight: 600;
+    color: #ff4500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    height: fit-content;
+}
+
+.navbar-search {
+    /* border: 3px solid pink; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-search {
+    background-color: lightgray;
+    height: 50%;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    font-size: 14px;
+    color: gray;
+    padding: 1%;
+    border-radius: 2px;
+}
+
+.navbar-search:hover {
+    cursor: pointer;
+}
+
+.banner-container {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-photo {
+    width: 100%;
+    position: absolute;
+    margin-top: -25%;
+}
+
+.banner-text {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    font-size: 5rem;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

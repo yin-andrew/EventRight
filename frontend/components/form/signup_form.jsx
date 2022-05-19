@@ -32,7 +32,7 @@ function SignupForm(props) {
                     <div className="signup-header">
                         <div className="login-header-left">
                             <div className="eventbrite-login-link">
-                                <Link to="/" className="eventbrite-logo-link">eventbrite</Link>
+                                <Link to="/" className="eventbrite-logo-link">eventright</Link>
                             </div>
                             <h1 className="signup-header-title">Create an account</h1>
                         </div>

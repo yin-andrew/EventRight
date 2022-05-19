@@ -17,7 +17,7 @@ function LoginForm(props) {
         e.preventDefault();
         console.log('demo login');
         let demoUser = {
-            email: 'test3',
+            email: 'test',
             password: '123456'
         };
         props.login(demoUser).then(()=>props.history.push('/user/show'));
@@ -46,7 +46,7 @@ function LoginForm(props) {
                     <div className="login-header">
                         <div className="login-header-left">
                             <div className="eventbrite-login-link">
-                                <Link to="/" className="eventbrite-logo-link">eventbrite</Link>
+                                <Link to="/" className="eventbrite-logo-link">eventright</Link>
                             </div>
                             <h1 className="login-header-title">Log in</h1>
                         </div>

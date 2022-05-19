@@ -11,4 +11,4 @@ const mDTP = dispatch => ({
     logout: ()=> dispatch(logout())
 });
 
-export default connect(mSTP, mDTP)(userShow)
+export default connect(mSTP, mDTP)(userShow);

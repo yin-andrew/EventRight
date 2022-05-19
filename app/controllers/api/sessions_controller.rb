@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
             logout!
             render plain: 'logged out'
         else
-            render json: 'failed to logout', status: 404
+            render json: ['failed to logout'], status: 404
         end
     end
 

@@ -1,0 +1,72 @@
+.events-index-container {
+    border: 5px solid black;
+    height: 100%;
+    width: 100%;
+}
+
+.index-header {
+    border: 2px solid green;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1%;
+}
+
+.index-panels-container {
+    border: 3px solid red;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+/* .index-panels-wrapper {
+    border: 3px solid blue;
+    display: flex;
+    width: 75%;
+} */
+
+/* .test-div {
+    border: 6px solid pink;
+    flex: 0 24%;
+    height: 100px;
+    margin-bottom: 1%;
+} */
+
+.index-panels-wrapper {
+    border: 4px solid blue;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.default-wrappa {
+    border: 4px solid purple;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.test-div {
+    border: 6px solid pink;
+    width: 40%; 
+    /* could hardcode width */
+    margin: 2%;
+    min-height: 400px;
+    min-width: 200px;
+    max-width: 242px;
+}
+
+.test-div:hover {
+    box-shadow: 0 12px 32px rgba(42, 50, 70, 0.06);
+}
+
+.test-img {
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    max-height: 200px;
+}
