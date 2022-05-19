@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import EventIndexContainer from "../event/event_index_container";
 
 function Navbar(props) {
-
 
     return(
         <div>
@@ -31,6 +31,10 @@ function Navbar(props) {
                 <div className="banner-text">Find your people.</div>
             </div>
 
+            <div className="home-index-container">
+                <EventIndexContainer />
+                
+            </div>
 
         </div>
     );

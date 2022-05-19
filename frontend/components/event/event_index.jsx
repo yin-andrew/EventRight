@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import EventPanel from "./event_index_panel";
 
 function EventIndex(props) {
     
@@ -7,18 +7,15 @@ function EventIndex(props) {
 
     return (
         <div className="events-index-container">
-            <div className="index-header">Events in San Francisco</div>
+            <div className="index-header">
+                <div style={{width: '15%', height:'100%'}} className="dummy"></div>
+                Popular in San Francisco
+            </div>
             <div className="index-panels-container">
                 <div className="index-panels-wrapper">
                     <div className="default-wrappa">
                         {props.events.map(event=> (
-                            <div key={event.id} className="test-div">
-                                {/* <img className="test-img" src={event.photoUrl} alt="" /> */}
-                                <div>
-
-                                    {event.title}
-                                </div>
-                            </div>
+                            <EventPanel className="test-div" key={event.id} event = {event}  />
                         ))}
                     </div>
                 </div>

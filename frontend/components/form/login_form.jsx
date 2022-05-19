@@ -17,7 +17,7 @@ function LoginForm(props) {
         e.preventDefault();
         console.log('demo login');
         let demoUser = {
-            email: 'test',
+            email: 'test@mail.com',
             password: '123456'
         };
         props.login(demoUser).then(()=>props.history.push('/user/show'));

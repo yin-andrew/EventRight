@@ -3,14 +3,15 @@ import React, { useEffect }from "react";
 
 function EventShow(props) {
     
-    useEffect(()=> console.log('hits'), []);
-    useEffect(()=> console.log(props), []);
-    useEffect(()=> props.fetchEvent(props.event.id), []);
+    useEffect(()=> {props.fetchEvent(props.event.id)}, []);
 
+    const seeProps = () => {
+        console.log('props', props);
+    }
 
     return (
 
-        <div>egg</div>
+        <div>{props.event.title}</div>
 
     ); 
 }

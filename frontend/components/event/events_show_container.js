@@ -3,9 +3,8 @@ import { fetchEvent } from "../../action/event_actions";
 import EventShow from "./event_show_item";
 
 const mSTP = (state, ownProps) => {
-    console.log('ownprops', ownProps);
     return {
-        event: state.events[ownProps.match.params.eventId]
+        event: state.entities.events[ownProps.match.params.eventId]
     }
 };
 

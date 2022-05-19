@@ -34,7 +34,8 @@
 }
 
 .navbar-right-signup,
-.navbar-right-login {
+.navbar-right-login,
+.navbar-right-logout {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +46,8 @@
 }
 
 .navbar-right-login:hover,
-.navbar-right-signup:hover {
+.navbar-right-signup:hover,
+.navbar-right-logout:hover {
     cursor: pointer;
     background-color: #ececec;
 }
@@ -114,4 +116,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.home-index-container {
+    border: 2px solid black;
 }
