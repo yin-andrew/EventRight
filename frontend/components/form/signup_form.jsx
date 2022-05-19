@@ -26,6 +26,7 @@ function SignupForm(props) {
     // }
 
     return (
+        
         <div className="login-structure">
             <div className="login-split-left">
                 <div className="signup-container">

@@ -18,7 +18,7 @@ const App = () => (
             <ProtectedRoute exact path='/user/show' component={ UserShowContainer } />
             {/* <Route exact path='/' component={ GreetingContainer }/> */}
             <Route exact path ='/events/:eventId' component={EventShowContainer}/>
-            <Route exact path ='/ti' component={EventPanel}/>
+            <Route exact path ='/sho' component={EventShowContainer}/>
             <Route exact path ='/home' component={EventIndexContainer}/>
             <Route exact path='/' component={ NavbarContainer }/>
 

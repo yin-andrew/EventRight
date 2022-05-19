@@ -64,7 +64,7 @@ function userShow(props) {
 
             {/* <div>this is the user show page</div>
             <div>Welcome {props.currentUser.fname}</div>
-            {/* <Link to='/' onClick={loggingout}> Logout</Link> */}
+            <Link to='/' onClick={loggingout}> Logout</Link>
             <button onClick={loggingout}>Logout</button> */}
         </div>
     );
