@@ -24,7 +24,7 @@ const App = () => (
             <Route exact path ='/events/:eventId' component={EventShowContainer}/>
             <Route exact path ='/sho' component={EventShow}/>
             <Route exact path ='/home' component={EventIndexContainer}/>
-            <Route exact path='/' component={ NavbarContainer }/>
+            <Route exact path='/' component={UserShowContainer}/>
             <Route exact path='/create' component={CreateEventFormContainer}/>
             <Route exact path='/edit/:eventId' component={EditEventFormContainer}/>
             

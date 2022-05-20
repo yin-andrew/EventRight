@@ -11,7 +11,7 @@ class Api::EventsController < ApplicationController
         if @event
             render :show
         else
-            render json @event.errors.full_messages, status: 404
+            render json: ['Event does not exist'], status: 404
         end
     end
 
@@ -20,13 +20,13 @@ class Api::EventsController < ApplicationController
         if @event.save
             render :show
         else
-            render json: @event.errors.full_messages, status: 422
+            render json: ['Missing fields!'], status: 422
         end
     end
 
     def update
         @event = Event.find(params[:event][:id])
-        if @event && @event.creator_id === current_user.id && @event.update(event_params)
+        if @event && @event.creator_id == current_user.id && @event.update(event_params)
             render :show
         else
             render json: ['failed to update'], status: 422

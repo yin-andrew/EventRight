@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect,useState } from "react";
 import { Link } from 'react-router-dom';
+import NavbarContainer from "../navbar/navbar_container";
 
 function EditEvent(props) {
     const [event, setEvent] = useState(props.event);
@@ -42,7 +43,8 @@ function EditEvent(props) {
 
     return (
         <div>
-            <div className="navbar-page-struct">
+            <NavbarContainer />
+            {/* <div className="navbar-page-struct">
                 <div className="navbar-structure">
                     <div className="navbar-left">
                         <div className="eventbrite-navbar-link">
@@ -64,7 +66,7 @@ function EditEvent(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="create-form-container">
                 <form onSubmit={handleSubmit} className="form-struct">

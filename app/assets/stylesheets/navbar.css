@@ -35,25 +35,30 @@
 
 .navbar-right-signup,
 .navbar-right-login,
-.navbar-right-logout {
+.navbar-right-logout,
+.navbar-right-create {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 5%;
     font-size: 14px;
     font-weight: 600;
-    color: black;
 }
 
 .navbar-right-login:hover,
 .navbar-right-signup:hover,
-.navbar-right-logout:hover {
+.navbar-right-logout:hover,
+.navbar-right-create:hover {
     cursor: pointer;
     background-color: #ececec;
 }
 
 .navbar-link {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .eventbrite-navbar-link {

@@ -20,7 +20,7 @@ function LoginForm(props) {
             email: 'test@mail.com',
             password: '123456'
         };
-        props.login(demoUser).then(()=>props.history.push('/user/show'));
+        props.login(demoUser).then(()=>props.history.push('/'));
     }
 
 

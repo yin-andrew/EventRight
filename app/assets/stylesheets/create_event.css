@@ -4,3 +4,32 @@
     width: 100%;
     height: 100%;
 }
+
+.form-input-structure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid lightgray;
+    padding: 1%;
+    border-radius: 1px;
+}
+
+.login-input-email-outer {
+    /* border: 1px solid red; */
+    border-radius: 1px;
+    background-color: white;
+    width: 97%;
+    font-size: 12px;
+    align-items: flex-start;
+    color: gray;
+}
+
+.login-input-email-inner {
+    /* border: 1px solid green; */
+    border: 0px;
+    width: 97%;
+    padding: 0;
+    margin: 0;
+    max-height: 95%;
+}

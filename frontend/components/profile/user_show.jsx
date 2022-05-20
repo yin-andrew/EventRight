@@ -12,16 +12,16 @@ tabs on the sidebar?
 
 function userShow(props) {
 
-    const loggingout = e => {
-        e.preventDefault();
-        console.log('logged out');
-        /*
-        running any kind of route to logging out changes current user
-        which is a prop, use an if to return null to avoid error
-        */
-        // props.logout().then(()=> <Redirect to='/' />);
-        props.logout().then(()=>props.history.push('/login'))
-    }
+    // const loggingout = e => {
+    //     e.preventDefault();
+    //     console.log('logged out');
+    //     /*
+    //     running any kind of route to logging out changes current user
+    //     which is a prop, use an if to return null to avoid error
+    //     */
+    //     // props.logout().then(()=> <Redirect to='/' />);
+    //     props.logout().then(()=>props.history.push('/login'))
+    // }
 
     // if (!currentUser) {
     //     return null;
@@ -29,7 +29,8 @@ function userShow(props) {
 
     return (
         <div>
-            <div className="navbar-page-struct">
+            <NavBarContainer />
+            {/* <div className="navbar-page-struct">
                 <div className="navbar-structure">
                     <div className="navbar-left">
                         <div className="eventbrite-navbar-link">
@@ -51,7 +52,7 @@ function userShow(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="banner-container">
                 <img src={window.heroBanner} alt="" className="banner-photo"/>
                 <div className="banner-text">Find your people.</div>

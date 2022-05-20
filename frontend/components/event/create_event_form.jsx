@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import NavbarContainer from "../navbar/navbar_container";
 
 
 function CreateEvent(props) {
@@ -56,7 +57,8 @@ function CreateEvent(props) {
 
     return (
         <div>
-            <div className="navbar-page-struct">
+            <NavbarContainer />
+            {/* <div className="navbar-page-struct">
                 <div className="navbar-structure">
                     <div className="navbar-left">
                         <div className="eventbrite-navbar-link">
@@ -78,7 +80,7 @@ function CreateEvent(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="create-form-container">
