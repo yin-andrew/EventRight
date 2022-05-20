@@ -8,7 +8,6 @@ function SignupForm(props) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(props);
         props.signup(user).then(()=>props.history.push('/user/show'));
     };
 

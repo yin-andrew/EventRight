@@ -9,6 +9,10 @@ import NavbarContainer from './navbar/navbar_container';
 import EventShowContainer from './event/events_show_container';
 import EventIndexContainer from './event/event_index_container';
 import EventPanel from './event/event_index_panel';
+import CreateEvent from './event/create_event_form';
+import CreateEventFormContainer from './event/create_event_form_container';
+import EditEventFormContainer from './event/edit_event_form_container';
+import EventShow from './event/event_show_item';
 
 const App = () => (
     <div>
@@ -18,9 +22,12 @@ const App = () => (
             <ProtectedRoute exact path='/user/show' component={ UserShowContainer } />
             {/* <Route exact path='/' component={ GreetingContainer }/> */}
             <Route exact path ='/events/:eventId' component={EventShowContainer}/>
-            <Route exact path ='/sho' component={EventShowContainer}/>
+            <Route exact path ='/sho' component={EventShow}/>
             <Route exact path ='/home' component={EventIndexContainer}/>
             <Route exact path='/' component={ NavbarContainer }/>
+            <Route exact path='/create' component={CreateEventFormContainer}/>
+            <Route exact path='/edit/:eventId' component={EditEventFormContainer}/>
+            
 
         </Switch>
     </div>

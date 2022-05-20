@@ -25,11 +25,11 @@ class Api::EventsController < ApplicationController
     end
 
     def update
-        @event = Event.find_by(id: params[:id])
+        @event = Event.find(params[:event][:id])
         if @event && @event.creator_id === current_user.id && @event.update(event_params)
             render :show
         else
-            render json: @event.errors.full_messages, status: 422
+            render json: ['failed to update'], status: 422
         end
     end
     
@@ -45,6 +45,6 @@ class Api::EventsController < ApplicationController
 
     private 
     def event_params
-        params.require(:event).permit(:title, :description, :date, :start_time, :end_time, :creator_id, :price, :address)
+        params.require(:event).permit(:id,:title, :description, :date, :start_time, :end_time, :creator_id, :price, :address, :photo)
     end
 end
