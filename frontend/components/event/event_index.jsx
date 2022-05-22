@@ -7,6 +7,7 @@ function EventIndex(props) {
 
     return (
         <div className="events-index-container">
+            {/* {props.fetchEvents()} */}
             <div className="index-header">
                 <div style={{width: '15%', height:'100%'}} className="dummy"></div>
                 Popular in San Francisco

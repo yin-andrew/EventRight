@@ -85,38 +85,38 @@ function CreateEvent(props) {
 
             <div className="create-form-container">
                 <form onSubmit={handleSubmit} className="form-struct">
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">Title</label>
-                        <input type="text" className="login-input-email-inner" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">Title</label>
+                        <input type="text" className="input-create-inner" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
                     </div>
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">description</label>
-                        <input type="text" className="login-input-email-inner" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">description</label>
+                        <textarea className="input-create-inner-ta" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
                     </div>
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">date</label>
-                        <input type="text" className="login-input-email-inner" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">date</label>
+                        <input type="text" className="input-create-inner" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})}/>
                     </div>
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">start time</label>
-                        <input type="text" className="login-input-email-inner" value={event.start_time} onChange={(e)=>setEvent({...event, start_time: e.target.value})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">start time</label>
+                        <input type="text" className="input-create-inner" value={event.start_time} onChange={(e)=>setEvent({...event, start_time: e.target.value})}/>
                     </div>
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">end time</label>
-                        <input type="text" className="login-input-email-inner" value={event.end_time} onChange={(e)=>setEvent({...event, end_time: e.target.value})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">end time</label>
+                        <input type="text" className="input-create-inner" value={event.end_time} onChange={(e)=>setEvent({...event, end_time: e.target.value})}/>
                     </div>
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">address</label>
-                        <input type="text" className="login-input-email-inner" value={event.address} onChange={(e)=>setEvent({...event, address: e.target.value})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">address</label>
+                        <input type="text" className="input-create-inner" value={event.address} onChange={(e)=>setEvent({...event, address: e.target.value})}/>
                     </div>
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">price</label>
-                        <input type="number" className="login-input-email-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">price</label>
+                        <input type="number" className="input-create-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
                     </div>
 
-                    <div className="form-input-structure">
-                        <label className="login-input-email-outer">photo</label>
-                        <input type="file" className="login-input-email-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
+                    <div className="form-create-structure">
+                        <label className="input-create-outer">photo</label>
+                        <input type="file" className="input-create-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
                     </div>
                     <button>Create Event</button>
                 </form>

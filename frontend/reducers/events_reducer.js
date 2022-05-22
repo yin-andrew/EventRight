@@ -3,7 +3,6 @@ import { RECEIVE_EVENT, RECEIVE_EVENTS, REMOVE_EVENT } from "../action/event_act
 
 const eventsReducer = (state ={}, action) => {
     Object.freeze(state);
-    console.log('action', action);
     switch(action.type) {
         case RECEIVE_EVENTS:
             return Object.assign({}, state, action.events);
@@ -11,7 +10,7 @@ const eventsReducer = (state ={}, action) => {
             return Object.assign({}, state, {[action.event.id]: action.event});
         case REMOVE_EVENT:
             let newState = Object.assign({}, state);
-            delete newState[action.reportId];
+            delete newState[action.eventId];
             return newState;
         default:
             return state;

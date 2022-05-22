@@ -17,7 +17,7 @@ class Api::EventsController < ApplicationController
 
     def create
         @event = Event.new(event_params)
-        if @event.save
+        if @event.save!
             render :show
         else
             render json: ['Missing fields!'], status: 422

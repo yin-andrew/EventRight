@@ -2,34 +2,44 @@
 .create-form-container {
     border: 4px solid green;
     width: 100%;
-    height: 100%;
+    height: 150vh;
 }
 
-.form-input-structure {
+.form-create-structure {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid lightgray;
+    border: 2px solid blue;
     padding: 1%;
     border-radius: 1px;
+    height: 12vh;
 }
 
-.login-input-email-outer {
-    /* border: 1px solid red; */
+.input-create-outer {
+    border: 1px solid red;
     border-radius: 1px;
     background-color: white;
-    width: 97%;
+    width: 80%;
+    height: 35%;
     font-size: 12px;
     align-items: flex-start;
     color: gray;
 }
 
-.login-input-email-inner {
-    /* border: 1px solid green; */
-    border: 0px;
-    width: 97%;
+.input-create-inner {
+    /* border: 2px solid green; */
+    /* border: 0px; */
+    width: 80%;
+    height: 25%;
     padding: 0;
     margin: 0;
     max-height: 95%;
+}
+
+.input-create-inner-ta {
+    width: 80%;
+    height: 25%;
+    padding: 0;
+    margin: 0;
 }

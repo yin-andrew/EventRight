@@ -28,7 +28,7 @@
 .navbar-right {
     display: flex;
     /* border: 2px solid purple; */
-    width: 30%;
+    width: 40%;
     font-size: 14px;
     justify-content: end;
 }
@@ -125,4 +125,9 @@
 
 .home-index-container {
     border: 2px solid black;
+}
+
+.navbar-user {
+    text-decoration: none;
+
 }

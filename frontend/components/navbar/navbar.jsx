@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import EventIndexContainer from "../event/event_index_container";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faHeart as farHeart } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faHeart as farHeart, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 function Navbar(props) {
@@ -49,7 +49,9 @@ function Navbar(props) {
                                 </Link>
                             </div>
                             <div className="navbar-right-signup">
-                                <Link to='/signup' className="navbar-link">Welcome,  {props.currentUser.fname}</Link>
+                                <Link to='/signup' className="navbar-user">
+                                    <span><FontAwesomeIcon icon={faUserCircle}/></span>
+                                    Welcome, {props.currentUser.fname}</Link>
                             </div>
                             <div className="navbar-right-logout">
                                 <div onClick={loggingout}>Logout</div>
