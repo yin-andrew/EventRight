@@ -1,4 +1,6 @@
 class Api::LikesController < ApplicationController
+
+
     def index 
         @likes = current_user.likes
         render :index

@@ -2,13 +2,29 @@ import React from "react";
 import NavBarContainer from "../navbar/navbar_container";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import LikesIndexItemContainer from "./likes_index_item_container";
 
 function LikesIndex(props) {
 
     //how to get the photo from the events that are there. 
+    //index should now only fetch liked events by the current user
 
     //render a ul of li items that are the 
     // <Link to={`/events/${props.like.event_id}`}>{}</Link>
+
+    const printprops = () => {
+        console.log("yepper stepper", props);
+    }
+
+    
+    useEffect(()=>{props.fetchLikes()}, []);
+    // useEffect(()=>{console.log("got likes", props)},[]);
+    useEffect(()=>{props.fetchEvents()}, []);
+    // useEffect(()=>{console.log("gotevents", props)},[]);
+
+    if (!props.likes){
+        return null;
+    }
 
     return(
         <div className="likes-index-container">
@@ -20,8 +36,25 @@ function LikesIndex(props) {
                             Likes
                         </div>
                     </div>
+                    
+                    {props.likes ? props.likes.map((like, idx)=> (
+                        <LikesIndexItemContainer like={like} key={idx} events={props.events}/>
+                    ))
+                    :
+                    <div></div>
+                    }
 
-                    <div className="likes-index-content">
+                </div>
+
+            </div>
+        </div>
+    );
+}
+
+export default LikesIndex;
+
+
+{/* <div className="likes-index-content">
                     
                         <div className="likes-item-list">
                             <div className="likes-item-body">
@@ -48,14 +81,4 @@ function LikesIndex(props) {
                             </div>
                             
                         </div>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-    );
-}
-
-export default LikesIndex;
+                    </div> */}

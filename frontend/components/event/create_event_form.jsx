@@ -8,6 +8,17 @@ function CreateEvent(props) {
     const [event, setEvent] = useState({title:'', description: '', date:'', start_time: '', end_time:'', address:'', price: 0, photoUrl:''});
 
     //events creation errors handling??
+    useEffect(()=>{props.clearEventErrors()},[]);
+    // useEffect(()=>window.scrollTo(0,0), props.errors);
+
+    const handleErrors = () => {
+        if (props.errors.length ===0) {
+            return null;
+        } else {
+            window.scrollTo(0,0);
+            return <ul className="login-errors-list">{props.errors.map((error,idx)=>(<li key={idx}>{error}</li>))}</ul>
+        } 
+    }
 
     const loggingout = e => {
         e.preventDefault();
@@ -82,6 +93,7 @@ function CreateEvent(props) {
                 </div>
             </div> */}
 
+            {handleErrors()}
 
             <div className="create-form-container">
                 <form onSubmit={handleSubmit} className="form-struct">

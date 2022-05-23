@@ -1,5 +1,5 @@
 .likes-index-struct {
-    border: 2px solid gray;
+    border-top: 2px solid gray;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,7 @@
 }
 
 .likes-index-body {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -20,13 +20,13 @@
 }
 
 .likes-body-header {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     min-width: 1000px;
     height: 225px;
 }
 
 .likes-header-text {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     min-width: 1000px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 800;
@@ -34,16 +34,17 @@
     font-size: 48px;
     margin-top: 10%;
     margin-bottom: 2%;
+    padding-left: 3%;
 }
 
 .likes-index-content {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     width: 100%;
     height: 225px;
 }
 
 .likes-item-list {
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     width: 700px;
     height: 180px;
     margin: 1%;
@@ -57,7 +58,7 @@
 }
 
 .likes-item-photo-container {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     height: 100px;
     width: 180px;
     overflow: hidden;
@@ -70,27 +71,49 @@
 }
 
 .likes-item-status {
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     height: 60px;
     width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-item-unlike {
+    /* border: 2px solid red; */
+    border-radius: 5px;
+    background-color: #d1410c;
+    color: white;
+    width: 150px;
+    height: 20px;
     text-align: center;
-    padding-top: 20px;
+}
+
+.index-item-unlike:hover {
+    cursor: pointer;
 }
 
 .likes-item-body {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     width: 528px;
     height: 180px;
 }
 
+
 .likes-item-title {
-    border: 2px solid lightgreen;
+    /* border: 2px solid lightgreen; */
     font-size: 18px;
     font-weight: 700;
     color: #39364f;
     width: 520px;
     height: 30px;
     padding: 1%;
+    text-decoration: none;
+}
+
+.likes-item-title:hover {
+    cursor: pointer;
 }
 
 .likes-item-time {

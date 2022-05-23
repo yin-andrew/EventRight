@@ -15,7 +15,12 @@ function Navbar(props) {
         which is a prop, use an if to return null to avoid error
         */
         // props.logout().then(()=> <Redirect to='/' />);
-        props.logout().then(()=>props.history.push('/login'))
+        //props.history doesn't exist? 
+        props.logout().then(()=>props.history.push('/login'));
+    }
+
+    if (!props) {
+        return null;
     }
 
     if (props.currentUser) {

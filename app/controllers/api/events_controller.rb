@@ -17,10 +17,10 @@ class Api::EventsController < ApplicationController
 
     def create
         @event = Event.new(event_params)
-        if @event.save!
+        if @event.save
             render :show
         else
-            render json: ['Missing fields!'], status: 422
+            render json: ['failed to create'], status: 422
         end
     end
 
@@ -45,6 +45,6 @@ class Api::EventsController < ApplicationController
 
     private 
     def event_params
-        params.require(:event).permit(:id,:title, :description, :date, :start_time, :end_time, :creator_id, :price, :address, :photo)
+        params.require(:event).permit(:id,:title, :description, :date, :start_time, :end_time, :creator_id, :price, :address, :photo).select {|x,v| v.present?}
     end
 end

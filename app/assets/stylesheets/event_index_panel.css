@@ -24,6 +24,7 @@
     width: 233px;
     height: 100%;
     align-items: center;
+    position: relative;
 }
 
 .panel-image-container {
@@ -101,4 +102,32 @@
     font-size: 14px;
     font-weight: 700;
     color: #39364f;
+}
+
+.event-panel-like {
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 233px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+}
+
+.panel-like {
+    border-radius: 5px;
+    background-color: #d1410c;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    height: 25px;
+    width: 70px;
+    padding-top: 7px;
+}
+
+.panel-like:hover {
+    cursor: pointer;
 }

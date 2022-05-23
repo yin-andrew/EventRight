@@ -21,7 +21,12 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('events')
 
 
-u1 = User.create(username:'test', email: 'test@mail.com', fname: 'john', lname: 'doe', password: '123456')
+u1 = User.create(username:'test', email: 'test@mail.com', fname: 'tester', lname: 'testa', password: '123456')
+u2 = User.create(username:'test2', email: 'test2@gmail.com', fname: 'tester2', lname: 'tester2', password: '123456')
+
+l1 = Like.create(id: 1, event_id: 1, user_id:1)
+l2 = Like.create(id: 2, event_id: 5, user_id:1)
+l3 = Like.create(id: 3, event_id: 16, user_id:1)
 
 
 e1 = Event.create(
