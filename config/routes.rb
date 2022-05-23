@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :events, only: [:create, :index, :destroy, :update, :show]
     resources :tickets, only: [:create, :index, :show, :destroy]
-    resources :likes, only: [:create, :index, :destroy]
+    resources :likes, only: [:create, :index, :destroy, :show]
   end
 
 end

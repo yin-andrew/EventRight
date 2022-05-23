@@ -6,6 +6,13 @@ export const fetchLikes = () => (
     })
 );
 
+export const fetchLike = likeId => (
+    $.ajax({
+        method: 'GET',
+        url:`api/likes/${likeId}`
+    })
+)
+
 export const createLike = like => (
     $.ajax({
         method: 'POST',

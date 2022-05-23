@@ -1,0 +1,118 @@
+.likes-index-struct {
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 1080;
+    height: 1000px;
+}
+
+.likes-index-body {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-width: 1000px;
+    width: 1000px;
+    height: 100%;
+}
+
+.likes-body-header {
+    border: 2px solid red;
+    min-width: 1000px;
+    height: 225px;
+}
+
+.likes-header-text {
+    border: 2px solid blue;
+    min-width: 1000px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    color: #1e0a3c;
+    font-size: 48px;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+.likes-index-content {
+    border: 2px solid purple;
+    width: 100%;
+    height: 225px;
+}
+
+.likes-item-list {
+    border: 2px solid yellow;
+    width: 700px;
+    height: 180px;
+    margin: 1%;
+    padding: 12px;
+    display: flex;
+}
+
+.likes-item-list:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 32px rgba(42, 50, 70, 0.10);
+}
+
+.likes-item-photo-container {
+    border: 2px solid orange;
+    height: 100px;
+    width: 180px;
+    overflow: hidden;
+}
+
+.likes-photo {
+    max-width: 180px;
+    height: auto;
+    width: auto;
+}
+
+.likes-item-status {
+    border: 2px solid pink;
+    height: 60px;
+    width: 180px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.likes-item-body {
+    border: 2px solid blue;
+    width: 528px;
+    height: 180px;
+}
+
+.likes-item-title {
+    border: 2px solid lightgreen;
+    font-size: 18px;
+    font-weight: 700;
+    color: #39364f;
+    width: 520px;
+    height: 30px;
+    padding: 1%;
+}
+
+.likes-item-time {
+    color: #d1410c;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 2%;
+    
+}
+
+.likes-item-address {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6f7287;
+    padding: 2%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.likes-item-price {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 2%;
+}

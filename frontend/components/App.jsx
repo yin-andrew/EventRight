@@ -13,6 +13,8 @@ import CreateEvent from './event/create_event_form';
 import CreateEventFormContainer from './event/create_event_form_container';
 import EditEventFormContainer from './event/edit_event_form_container';
 import EventShow from './event/event_show_item';
+import LikesIndex from './like/likes_index';
+import LikesIndexContainer from './like/likes_index_container';
 
 const App = () => (
     <div>
@@ -27,7 +29,7 @@ const App = () => (
             <Route exact path='/' component={UserShowContainer}/>
             <Route exact path='/create' component={CreateEventFormContainer}/>
             <Route exact path='/edit/:eventId' component={EditEventFormContainer}/>
-            
+            <Route exact path='/likes' component={LikesIndexContainer}/>
 
         </Switch>
     </div>

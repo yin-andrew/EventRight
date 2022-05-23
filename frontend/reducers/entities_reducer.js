@@ -7,7 +7,7 @@ import likesReducer from "./likes_reducer";
 const entitiesReducer = combineReducers({
     users: usersReducer,
     events: eventsReducer,
-    tickets, ticketsReducer,
+    tickets: ticketsReducer,
     likes: likesReducer
 });
 

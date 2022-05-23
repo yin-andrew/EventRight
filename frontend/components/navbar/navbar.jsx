@@ -41,7 +41,7 @@ function Navbar(props) {
                                 </Link>
                             </div>
                             <div className="navbar-right-login">
-                                <Link to='/login' className="navbar-link">
+                                <Link to='/likes' className="navbar-link">
                                     <FontAwesomeIcon icon = {farHeart} />
                                     <div>
                                         Likes

@@ -11,6 +11,8 @@ const ticketsReducer = (state = {}, action) => {
             let newState = Object.assign({}, state);
             delete newState[action.ticketId];
             return newState;
+        default:
+            return state;
     }
 }
 
