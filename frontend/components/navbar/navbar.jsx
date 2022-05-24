@@ -68,16 +68,16 @@ function Navbar(props) {
                                             <Link to="/" className="drop-like">Browse events</Link>                  
                                         </div>
                                         <div className="drop-hosted">
-                                            Manage my events
+                                            Manage my events- coming soon
                                         </div>
                                         <div className="drop-tix">
-                                            Tickets(#)
+                                            Tickets(#) - coming soon
                                         </div> 
                                         <div>
                                             <Link to='/likes' className="drop-like">Liked</Link>
                                         </div>
                                         <div className="drop-profile">
-                                            Account settings
+                                            Account settings-coming soon
                                         </div>
                                         <div onClick={loggingout} className="drop-logout">
                                             Log out

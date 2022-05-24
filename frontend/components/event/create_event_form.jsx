@@ -96,41 +96,69 @@ function CreateEvent(props) {
             {handleErrors()}
 
             <div className="create-form-container">
+                <div className="create-form-header">
+                    <div className="create-header-text">
+                        Create Your Event
+                    </div>
+                </div>
                 <form onSubmit={handleSubmit} className="form-struct">
+
                     <div className="form-create-structure">
-                        <label className="input-create-outer">Title</label>
-                        <input type="text" className="input-create-inner" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Title</label>
+                            <input type="text" className="input-create-inner" placeholder="Be clear and descriptive" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
+                        </div>
                     </div>
                     <div className="form-create-structure">
-                        <label className="input-create-outer">description</label>
-                        <textarea className="input-create-inner-ta" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Description</label>
+                            <textarea className="input-create-inner-ta" placeholder="Write about your event" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+
+                        </div>
                     </div>
                     <div className="form-create-structure">
-                        <label className="input-create-outer">date</label>
-                        <input type="text" className="input-create-inner" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})}/>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Date (enter like "Fri, May 2, 2021")</label>
+                            <input type="text" className="input-create-inner" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})}/>
+                        </div>
                     </div>
                     <div className="form-create-structure">
-                        <label className="input-create-outer">start time</label>
-                        <input type="text" className="input-create-inner" value={event.start_time} onChange={(e)=>setEvent({...event, start_time: e.target.value})}/>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Starts (enter time like "7:00 AM")</label>
+                            <input type="text" className="input-create-inner" value={event.start_time} onChange={(e)=>setEvent({...event, start_time: e.target.value})}/>
+                        </div>
                     </div>
                     <div className="form-create-structure">
-                        <label className="input-create-outer">end time</label>
-                        <input type="text" className="input-create-inner" value={event.end_time} onChange={(e)=>setEvent({...event, end_time: e.target.value})}/>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Ends (enter time and specify zone like "7:00 PM PDT")</label>
+                            <input type="text" className="input-create-inner" value={event.end_time} onChange={(e)=>setEvent({...event, end_time: e.target.value})}/>
+                        </div>
                     </div>
                     <div className="form-create-structure">
-                        <label className="input-create-outer">address</label>
-                        <input type="text" className="input-create-inner" value={event.address} onChange={(e)=>setEvent({...event, address: e.target.value})}/>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Venue location</label>
+                            <input type="text" placeholder="Where is it?" className="input-create-inner" value={event.address} onChange={(e)=>setEvent({...event, address: e.target.value})}/>
+                        </div>
                     </div>
                     <div className="form-create-structure">
-                        <label className="input-create-outer">price</label>
-                        <input type="number" className="input-create-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Ticket Price</label>
+                            <input type="number" className="input-create-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
+                        </div>
                     </div>
 
                     <div className="form-create-structure">
-                        <label className="input-create-outer">photo</label>
-                        <input type="file" className="input-create-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Photo</label>
+                            <input type="file" className="input-create-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
+                        </div>
                     </div>
-                    <button>Create Event</button>
+                   
+                    <div className="submit-event">
+                            <button className="submit-btn">
+                            Create Event
+                            </button>     
+                    </div>
                 </form>
 
             </div>

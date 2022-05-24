@@ -32,6 +32,7 @@ const App = () => (
             <Route exact path='/edit/:eventId' component={EditEventFormContainer}/>
             <ProtectedRoute exact path='/likes' component={LikesIndexContainer}/>
             {/* <Route exact path='/likes/:likeId' component={LikesIndexItemContainer}/> */}
+            <Route exact path ='/myevents' component={EventShow}/>
 
 
         </Switch>

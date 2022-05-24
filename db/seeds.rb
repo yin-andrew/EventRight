@@ -16,18 +16,26 @@ require 'open-uri'
 
 User.destroy_all
 Event.destroy_all
+Like.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('events')
+ActiveRecord::Base.connection.reset_pk_sequence!('likes')
 
 
 u1 = User.create(username:'test', email: 'test@mail.com', fname: 'tester', lname: 'testa', password: '123456')
 u2 = User.create(username:'test2', email: 'test2@gmail.com', fname: 'tester2', lname: 'tester2', password: '123456')
+u3 = User.create(username: 'test3', email: 'test3@gmail.com', fname: 'tester3', lname:'tester2', password: '123456')
 
-l1 = Like.create(id: 1, event_id: 1, user_id:1)
-l2 = Like.create(id: 2, event_id: 5, user_id:1)
-l3 = Like.create(id: 3, event_id: 16, user_id:1)
+l1 = Like.create(event_id: 1, user_id:1)
+l2 = Like.create(event_id: 5, user_id:1)
+l3 = Like.create(event_id: 16, user_id:1)
 
+l4 = Like.create(event_id: 3, user_id: 2)
+l5 = Like.create(event_id: 9, user_id: 2)
+l6 = Like.create(event_id: 14, user_id: 2)
+
+l7 = Like.create(event_id: 17, user_id: 3)
 
 e1 = Event.create(
     title: 'Toasted Life Summer Outdoor Block Party', 
@@ -202,7 +210,7 @@ e8 = Event.create(
     date: 'Sat, May 21, 2022', 
     start_time:'12:00 PM PDT', 
     end_time: '5:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 45, 
     address: 'District Six 428 11th Street San Francisco, CA 94103'
 
@@ -222,7 +230,7 @@ e9 = Event.create(
     date: 'Sun, Jun 12, 2022', 
     start_time:'5:00 AM PDT', 
     end_time: '11:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 16, 
     address: 'AROUND THE WORLD Participate from home!'
 
@@ -245,7 +253,7 @@ e10 = Event.create(
     date: 'Sat, August 6, 2022', 
     start_time:'9:00 AM PDT', 
     end_time: '2:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 25, 
     address: 'Linda Mar Beacha Highway One and Linda Mar Blvd Pacifica, CA 94044'
 
@@ -265,7 +273,7 @@ e11 = Event.create(
     date: 'Sun, May 22, 2022', 
     start_time:'7:00 PM PDT', 
     end_time: '9:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 15, 
     address: 'Canyon Commons'
 
@@ -283,7 +291,7 @@ e12 = Event.create(
     or meet new ones in this supportive session.", 
     date: 'Fri, May 20, 2022', 
     start_time:'6:30 PM PDT', end_time: '8:30 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 30, 
     address: 'School Of Visual Philosophy 1065 The Alameda San Jose, CA 95126'
 
@@ -308,7 +316,7 @@ e13 = Event.create(
     date: 'Sun, May 22, 2022', 
     start_time:'10:00 AM PDT', 
     end_time: '12:30 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 20, 
     address: 'Almanac Beer Co. 651 West Tower Avenue Alameda, CA 94501'
 
@@ -332,7 +340,7 @@ e14 = Event.create(
     date: 'Sat, May 28, 2022', 
     start_time:'12:00 PM PDT', 
     end_time: '2:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 0, 
     address: '1700 Industrial Road San Carlos, CA 94070'
 
@@ -351,7 +359,7 @@ e15 = Event.create(
     date: 'Wed, June 15, 2022', 
     start_time:'6:00 PM PDT', 
     end_time: '7:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 2, 
     price: 30, 
     address: 'SCRAP 2150 Newcomb Avenue San Francisco, CA 94124'
 
@@ -368,7 +376,7 @@ e16 = Event.create(
     date: 'Sun, July 10, 2022', 
     start_time:'11:30 PM PDT', 
     end_time: '2:00 AM PDT', 
-    creator_id: 1, 
+    creator_id: 3, 
     price: 30, 
     address: 'The Phoenix Hotel 601 Eddy St. San Francisco, CA 94109'
 
@@ -387,7 +395,7 @@ e17 = Event.create(
     date: 'Fri, June 4, 2022', 
     start_time:'7:30 PM PDT', 
     end_time: '9:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 3, 
     price: 30, 
     address: '915 Columbus Ave, San Francisco, CA 94133'
 
@@ -403,7 +411,7 @@ e18 = Event.create(
     us for an Amazing Dance night with 2 Rooms of SALSA DANCING, BACHATA DANCE, Dance Lessons for ALL.", 
     date: 'Fri, May 27, 2022', 
     start_time:'7:45 PM PDT', end_time: '11:30 PM PDT', 
-    creator_id: 1, 
+    creator_id: 3, 
     price: 12, 
     address: '550 Barneveld San Francisco, CA 94124'
 
@@ -421,7 +429,7 @@ e19 = Event.create(
     date: 'Sun, May 22, 2022', 
     start_time:'7:00 PM PDT', 
     end_time: '1:00 AM PDT', 
-    creator_id: 1, 
+    creator_id: 3, 
     price: 20, 
     address: 'Westwood 2036 Lombard Street San Francisco, CA 94123'
 )
@@ -438,7 +446,7 @@ e20 = Event.create(
     date: 'Fri, May 20, 2022', 
     start_time:'7:00 PM PDT', 
     end_time: '9:00 PM PDT', 
-    creator_id: 1, 
+    creator_id: 3, 
     price: 0, 
     address: 'Cantor Arts Center at Stanford University 328 Lomita Dr Stanford, CA 94305-5060'
 

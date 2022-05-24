@@ -8,6 +8,15 @@ function EditEvent(props) {
 
     //events creation errors handling??
 
+    const handleErrors = () => {
+        if (props.errors.length ===0) {
+            return null;
+        } else {
+            window.scrollTo(0,0);
+            return <ul className="login-errors-list">{props.errors.map((error,idx)=>(<li key={idx}>{error}</li>))}</ul>
+        } 
+    }
+
     const loggingout = e => {
         e.preventDefault();
         console.log('logged out');
@@ -40,40 +49,93 @@ function EditEvent(props) {
     };
 
     //
+    if (!props.event) {
+        return null;
+    }
 
     return (
         <div>
             <NavbarContainer />
-            {/* <div className="navbar-page-struct">
-                <div className="navbar-structure">
-                    <div className="navbar-left">
-                        <div className="eventbrite-navbar-link">
-                            <Link to="/" className="eventbrite-logo-link">eventright</Link>
-                        </div>
-                        <div className="navbar-search">
-                            <div className="search"> Search Events</div> 
-                        </div>
-                    </div>
-                    <div className="navbar-right">
-                        <div className="navbar-right-login">
-                            <Link to='/login' className="navbar-link">Likes</Link>
-                        </div>
-                        <div className="navbar-right-signup">
-                            <Link to='/signup' className="navbar-link">Welcome</Link>
-                        </div>
-                        <div className="navbar-right-logout">
-                            <div onClick={loggingout}>Logout</div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
 
             <div className="create-form-container">
+                <div className="create-form-header">
+                    <div className="create-header-text">
+                        Edit Your Event
+                    </div>
+                </div>
+                <form onSubmit={handleSubmit} className="form-struct">
+
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Title</label>
+                            <input type="text" className="input-create-inner" placeholder="Be clear and descriptive" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
+                        </div>
+                    </div>
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Description</label>
+                            <textarea className="input-create-inner-ta" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+
+                        </div>
+                    </div>
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Date (enter like "Fri, May 2, 2021")</label>
+                            <input type="text" className="input-create-inner" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})}/>
+                        </div>
+                    </div>
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Starts (enter time like "7:00 AM")</label>
+                            <input type="text" className="input-create-inner" value={event.start_time} onChange={(e)=>setEvent({...event, start_time: e.target.value})}/>
+                        </div>
+                    </div>
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Ends (enter time and specify zone like "7:00 PM PDT")</label>
+                            <input type="text" className="input-create-inner" value={event.end_time} onChange={(e)=>setEvent({...event, end_time: e.target.value})}/>
+                        </div>
+                    </div>
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Venue location</label>
+                            <input type="text" placeholder="Where is it?" className="input-create-inner" value={event.address} onChange={(e)=>setEvent({...event, address: e.target.value})}/>
+                        </div>
+                    </div>
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Ticket Price</label>
+                            <input type="number" className="input-create-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
+                        </div>
+                    </div>
+
+                    <div className="form-create-structure">
+                        <div className="create-field-struct">
+                            <label className="input-create-outer">Event Photo</label>
+                            <input type="file" className="input-create-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
+                        </div>
+                    </div>
+                    <button className="submit-event">
+                        <div className="submit-btn">
+                            Update Event
+                        </div>
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+    );
+
+}
+
+export default EditEvent;
+
+{/* <div className="create-form-container">
                 <form onSubmit={handleSubmit} className="form-struct">
                     <div className="form-input-structure">
                         <label className="login-input-email-outer">Title</label>
                         <input type="text" className="login-input-email-inner" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
-                        {/* value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})} */}
                     </div>
                     <div className="form-input-structure">
                         <label className="login-input-email-outer">description</label>
@@ -100,7 +162,6 @@ function EditEvent(props) {
                         <input type="number" className="login-input-email-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
                     </div>
 
-                    {/* image handling */}
                     <div className="form-input-structure">
                         <label className="login-input-email-outer">photo</label>
                         <input type="file" className="login-input-email-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
@@ -109,11 +170,4 @@ function EditEvent(props) {
                     <button>Update Event</button>
                 </form>
 
-            </div>
-
-        </div>
-    );
-
-}
-
-export default EditEvent;
+            </div> */}
