@@ -16,7 +16,14 @@ function Navbar(props) {
         */
         // props.logout().then(()=> <Redirect to='/' />);
         //props.history doesn't exist? 
-        props.logout().then(()=>props.history.push('/login'));
+        props.clearLikes();
+        props.logout().then(()=>{
+            props.history.push('/login');
+        });
+    }
+
+    const iconStyle = {
+        
     }
 
     if (!props) {
@@ -53,14 +60,34 @@ function Navbar(props) {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="navbar-right-signup">
-                                <Link to='/signup' className="navbar-user">
-                                    <span><FontAwesomeIcon icon={faUserCircle}/></span>
-                                    Welcome, {props.currentUser.fname}</Link>
+                            <div className="navbar-right-loggedin">
+                                <div className="navbar-user">
+                                    <span><FontAwesomeIcon icon={faUserCircle}  style={{marginRight: 5}} />{props.currentUser.fname}</span>
+                                    <div className="navbar-dropdown">
+                                        <div>
+                                            <Link to="/" className="drop-like">Browse events</Link>                  
+                                        </div>
+                                        <div className="drop-hosted">
+                                            Manage my events
+                                        </div>
+                                        <div className="drop-tix">
+                                            Tickets(#)
+                                        </div> 
+                                        <div>
+                                            <Link to='/likes' className="drop-like">Liked</Link>
+                                        </div>
+                                        <div className="drop-profile">
+                                            Account settings
+                                        </div>
+                                        <div onClick={loggingout} className="drop-logout">
+                                            Log out
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="navbar-right-logout">
+                            {/* <div className="navbar-right-logout">
                                 <div onClick={loggingout}>Logout</div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

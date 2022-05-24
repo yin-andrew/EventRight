@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link, Redirect } from "react-router-dom";
 import NavBarContainer from "../navbar/navbar_container";
 import EventIndexContainer from "../event/event_index_container";
@@ -12,6 +12,7 @@ tabs on the sidebar?
 
 function userShow(props) {
 
+    // const [user, setUser] = useState(props.currentUser);
     // const loggingout = e => {
     //     e.preventDefault();
     //     console.log('logged out');

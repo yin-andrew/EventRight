@@ -4,19 +4,24 @@
 // consider deleting this container it doesnt need to
 
 import { connect } from "react-redux";
-import { createLike, fetchLikes } from "../../action/like_actions";
+import { withRouter } from "react-router-dom";
+import { createLike, fetchLikes, deleteLike } from "../../action/like_actions";
 import EventPanel from "./event_index_panel";
 
 // interact with the application state necessarily
-const mSTP = (state, ownProps) => ({
-    likes: state.entities.likes,
-    currentUser: state.entities.users[state.session.id] 
-});
+// from ownprops receive all fetchedLikes. get likeId where event_id = event.id
+const mSTP = (state, ownProps) => {
+    // console.log("ownprop", ownProps);
+    // console.log('state', state);
+    return {
+        currentUser: state.entities.users[state.session.id],
+        liked: ownProps.liked
+    }
+};
 
 const mDTP = dispatch => ({
-    fetchLikes: ()=> dispatch(fetchLikes()),
-    createLike: like=>dispatch(createLike(like)),
+    createLike: like => dispatch(createLike(like)),
     deleteLike: (likeId) => dispatch(deleteLike(likeId))
 });
 
-export default connect(mSTP, mDTP)(EventPanel);
+export default withRouter(connect(mSTP, mDTP)(EventPanel));

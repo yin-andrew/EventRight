@@ -30,7 +30,7 @@ const App = () => (
             <Route exact path='/' component={UserShowContainer}/>
             <ProtectedRoute exact path='/create' component={CreateEventFormContainer}/>
             <Route exact path='/edit/:eventId' component={EditEventFormContainer}/>
-            <Route exact path='/likes' component={LikesIndexContainer}/>
+            <ProtectedRoute exact path='/likes' component={LikesIndexContainer}/>
             {/* <Route exact path='/likes/:likeId' component={LikesIndexItemContainer}/> */}
 
 

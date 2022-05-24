@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-function EventPanel({liked, event}) {
+function EventPanel(props) {
 // props.photoUrl, title, date, start_time, address, price
-// fetch the dimensions of the panel to size it 
 // may need to fetch the creator info so use fetchUser via container?
 
     const seeL = () => {
-        console.log()
+        console.log("curlike", bigLike);
     }
+
+    const bigLike = props.likes.filter(like=>(like.event_id === props.event.id))[0];
+
 
     return (
         <div className="panel-container">
+            {/* {seeL()} */}
             <div className="panel-image-container">
-                <Link to={`/events/${event.id}`}>
+                <Link to={`/events/${props.event.id}`}>
                     {/* <img src={event.photoUrl} className="test-img"alt="" /> */}
                 </Link>
             
@@ -22,11 +25,11 @@ function EventPanel({liked, event}) {
                 <div className="panel-body-wrapper">
                     <div className="panel-body">
                         <div className="event-panel-title">
-                            <Link to={`/events/${event.id}`} className="panel-title-link">{event.title}</Link>
+                            <Link to={`/events/${props.event.id}`} className="panel-title-link">{props.event.title}</Link>
                         </div>
-                        <div className="event-panel-date-time">{event.date}  {'\u2B24'} {event.start_time} </div>
-                        <div className="event-panel-address">{event.address} </div>
-                        <div className="event-panel-price"> Starts at ${event.price} </div>
+                        <div className="event-panel-date-time">{props.event.date}  {'\u2B24'} {props.event.start_time} </div>
+                        <div className="event-panel-address">{props.event.address} </div>
+                        <div className="event-panel-price"> Starts at ${props.event.price} </div>
                         <div className="event-panel-creator">
                             jeff
                             <br />
@@ -35,20 +38,39 @@ function EventPanel({liked, event}) {
                         </div>
 
 
-                    </div>  
-                    {liked ? 
+                    </div> 
+                    {props.currentUser ? 
+                        props.liked ? 
                         <div className="event-panel-like">
-                            <div className="panel-like">
+                            <div className="panel-like" onClick={()=> props.deleteLike(bigLike.id)}>
+                                Unlike
+                            </div>
+                        </div>
+                        :
+                        <div className="event-panel-like">
+                            <div className="panel-like" onClick={()=>props.createLike({user_id: props.currentUser.id, event_id: props.event.id})}>
+                                Like
+                            </div>
+                        </div>
+                    :  
+                    <div className="event-panel-like">
+                        <div className="panel-like" onClick={()=>props.history.push('/login')}>
+                            Like
+                        </div>
+                    </div>} 
+                    {/* {props.liked ? 
+                        <div className="event-panel-like">
+                            <div className="panel-like" onClick={()=> props.deleteLike(bigLike.id)}>
                                 Unlike
                             </div>
                         </div>
                     :
                         <div className="event-panel-like">
-                            <div className="panel-like">
+                            <div className="panel-like" onClick={()=>props.createLike({user_id: props.currentUser.id, event_id: props.event.id})}>
                                 Like
                             </div>
                         </div>
-                    }
+                    } */}
                 </div>
 
             </div>

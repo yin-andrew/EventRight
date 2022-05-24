@@ -1,12 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import EventPanel from "./event_index_panel";
 import EventIndexPanelContainer from "./event_index_panel_container";
 
 function EventIndex(props) {
+
+    // const [user, setUser] = useState(props.currentUser.id);
     
     useEffect(()=> {props.fetchEvents()}, []);
-    useEffect(()=>{props.fetchLikes()}, []);
+    useEffect(()=>{
+        if (props.currentUser) {
+            props.fetchLikes()
+        }
+    }, []);
 
+    
     let likerenjoyers;
     const setL = () => {
         likerenjoyers = props.likes.map(likes=> likes.event_id);
@@ -30,9 +37,10 @@ function EventIndex(props) {
                     <div className="default-wrappa">
                         {props.events.map(event=> (
                             likerenjoyers.includes(event.id) ?
-                                <EventPanel className="test-div" key={event.id} event = {event} liked={true}  />
+                            // eventindexpanelcontainer 
+                                <EventIndexPanelContainer className="test-div" key={event.id} event = {event} liked={true} likes={props.likes} />
                             :
-                                <EventPanel className="test-div" key={event.id} event = {event} liked={false} />
+                                <EventIndexPanelContainer className="test-div" key={event.id} event = {event} liked={false} likes={props.likes} />
                             )
                         )}
                     </div>

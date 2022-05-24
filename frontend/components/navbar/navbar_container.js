@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { logout } from "../../action/session_actions";
+import { clearLikes } from "../../action/like_actions";
 import Navbar from "./navbar";
 
 
@@ -8,7 +10,8 @@ const mSTP = ({entities, session}) => ({
 });
 
 const mDTP = dispatch => ({
-    logout: ()=>dispatch(logout())
+    logout: ()=>dispatch(logout()),
+    clearLikes: () => dispatch(clearLikes())
 })
 
-export default connect(mSTP, mDTP)(Navbar);
+export default withRouter(connect(mSTP, mDTP)(Navbar));

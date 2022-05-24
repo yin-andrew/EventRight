@@ -6,7 +6,8 @@ import EventIndex from "./event_index";
 
 const mSTP = (state, ownProps) => ({
     events: Object.values(state.entities.events),
-    likes: Object.values(state.entities.likes)
+    likes: Object.values(state.entities.likes),
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = dispatch => ({

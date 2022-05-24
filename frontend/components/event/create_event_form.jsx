@@ -45,7 +45,7 @@ function CreateEvent(props) {
         formData.append('event[address]', event.address);
         formData.append('event[photo]', event.photoUrl);
 
-        console.log('form:', formData);
+        // console.log('form:', formData);
         props.createEvent(formData).then(()=>props.history.push('/'));
         //push to home and render new event in the home page
     };
