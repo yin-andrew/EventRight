@@ -104,7 +104,7 @@ function EditEvent(props) {
                     </div>
                     <div className="form-create-structure">
                         <div className="create-field-struct">
-                            <label className="input-create-outer">Ticket Price</label>
+                            <label className="input-create-outer">Ticket Price($)</label>
                             <input type="number" className="input-create-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
                         </div>
                     </div>

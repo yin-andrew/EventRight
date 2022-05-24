@@ -17,7 +17,7 @@ function EventIndex(props) {
     let likerenjoyers;
     const setL = () => {
         likerenjoyers = props.likes.map(likes=> likes.event_id);
-        console.log("fetching the likes", likerenjoyers);
+        // console.log("fetching the likes", likerenjoyers);
         //likerenjoyers now contains the ids of liked events
     }
 

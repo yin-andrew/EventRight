@@ -112,7 +112,7 @@ function CreateEvent(props) {
                     <div className="form-create-structure">
                         <div className="create-field-struct">
                             <label className="input-create-outer">Description</label>
-                            <textarea className="input-create-inner-ta" placeholder="Write about your event" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+                            <textarea className="input-create-inner-ta" rows="8" cols="135" placeholder="Write about your event" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
 
                         </div>
                     </div>
@@ -142,7 +142,7 @@ function CreateEvent(props) {
                     </div>
                     <div className="form-create-structure">
                         <div className="create-field-struct">
-                            <label className="input-create-outer">Ticket Price</label>
+                            <label className="input-create-outer">Ticket Price($)</label>
                             <input type="number" className="input-create-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
                         </div>
                     </div>

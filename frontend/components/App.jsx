@@ -16,6 +16,7 @@ import EventShow from './event/event_show_item';
 import LikesIndex from './like/likes_index';
 import LikesIndexContainer from './like/likes_index_container';
 import LikesIndexItemContainer from './like/likes_index_item_container';
+import OwnEventsContainer from './hosted/own_events_container';
 
 const App = () => (
     <div>
@@ -32,7 +33,7 @@ const App = () => (
             <Route exact path='/edit/:eventId' component={EditEventFormContainer}/>
             <ProtectedRoute exact path='/likes' component={LikesIndexContainer}/>
             {/* <Route exact path='/likes/:likeId' component={LikesIndexItemContainer}/> */}
-            <Route exact path ='/myevents' component={EventShow}/>
+            <Route exact path ='/own' component={OwnEventsContainer}/>
 
 
         </Switch>

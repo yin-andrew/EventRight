@@ -64,17 +64,19 @@ function Navbar(props) {
                                 <div className="navbar-user">
                                     <span><FontAwesomeIcon icon={faUserCircle}  style={{marginRight: 5}} />{props.currentUser.fname}</span>
                                     <div className="navbar-dropdown">
-                                        <div>
-                                            <Link to="/" className="drop-like">Browse events</Link>                  
+                                        <div onClick={()=>props.history.push('/')} className="drop-like">
+                                            Browse events
+                                            {/* <Link to="/" className="drop-like">Browse events</Link>                   */}
                                         </div>
-                                        <div className="drop-hosted">
-                                            Manage my events- coming soon
+                                        <div onClick={()=>props.history.push('/own')} className="drop-hosted">
+                                            Manage my events
                                         </div>
                                         <div className="drop-tix">
                                             Tickets(#) - coming soon
                                         </div> 
-                                        <div>
-                                            <Link to='/likes' className="drop-like">Liked</Link>
+                                        <div onClick={()=>props.history.push('/likes')} className="drop-like">
+                                            Liked
+                                            {/* <Link to='/likes' className="drop-like">Liked</Link> */}
                                         </div>
                                         <div className="drop-profile">
                                             Account settings-coming soon

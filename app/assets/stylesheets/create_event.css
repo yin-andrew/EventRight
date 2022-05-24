@@ -43,7 +43,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 60%;
     height: 50%;
 }
 
@@ -71,10 +71,12 @@
 }
 
 .input-create-inner-ta {
+    text-decoration: none ;
     border: none;
-    min-width: 100%;
-    max-width: 95%;
-    height: 25%;
+    min-width: 98%;
+    max-width: 98%;
+    min-height: 200px;
+    /* height: 25%; */
     padding: 0;
     margin-left: 1%;
 }
