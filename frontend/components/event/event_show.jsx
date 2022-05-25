@@ -35,7 +35,6 @@ function EventShow(props) {
             {/* {seeProps()} */}
             <NavbarContainer />
             <div className="event-show-struct">
-                    {/* props.event */}
                     <div className="show-photo-container">
                         {/* <img src={props.event.photoUrl} className="show-photo-opaque" /> */}
                         <img src={window.testPhoto} className="show-photo-opaque" />
@@ -57,9 +56,18 @@ function EventShow(props) {
                                 </div>
 
                             </div>
+                        {props.currentUser ? 
                         <div className="show-tickets">
-                            <button className="ticket-button">Tickets</button>
+                            <button className="ticket-button" onClick={()=>props.openModal(`${props.event.id}`)}>Tickets</button>
                         </div>
+                        :
+                        <div className="show-tickets">
+                            <button className="ticket-button" onClick={()=>props.history.push('/login')}>Tickets</button>
+                        </div>
+                        }
+                        {/* <div className="show-tickets">
+                            <button className="ticket-button">Tickets</button>
+                        </div> */}
                         <div className="event-show-body">
                             <div className="event-show-desc">
                                 <div className="show-desc-text">

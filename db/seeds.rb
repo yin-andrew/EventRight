@@ -21,6 +21,7 @@ Like.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('events')
 ActiveRecord::Base.connection.reset_pk_sequence!('likes')
+ActiveRecord::Base.connection.reset_pk_sequence!('tickets')
 
 
 u1 = User.create(username:'test', email: 'test@mail.com', fname: 'tester', lname: 'testa', password: '123456')

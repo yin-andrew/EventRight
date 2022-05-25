@@ -123,6 +123,10 @@
     width: 32%;
 }
 
+.ticket-button:hover {
+    cursor: pointer;
+}
+
 .event-show-body {
     /* border: 2px solid violet; */
     width: 100%;

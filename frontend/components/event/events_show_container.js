@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import { fetchEvent } from "../../action/event_actions";
+import { openModal } from "../../action/modal_actions";
 import { logout } from "../../action/session_actions";
-import EventShow from "./event_show_item";
+import EventShow from "./event_show";
 
 const mSTP = (state, ownProps) => {
     return {
@@ -12,7 +13,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     fetchEvent: eventId => dispatch(fetchEvent(eventId)),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mSTP, mDTP)(EventShow);

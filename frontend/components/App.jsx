@@ -12,15 +12,17 @@ import EventPanel from './event/event_index_panel';
 import CreateEvent from './event/create_event_form';
 import CreateEventFormContainer from './event/create_event_form_container';
 import EditEventFormContainer from './event/edit_event_form_container';
-import EventShow from './event/event_show_item';
+import EventShow from './event/event_show';
 import LikesIndex from './like/likes_index';
 import LikesIndexContainer from './like/likes_index_container';
 import LikesIndexItemContainer from './like/likes_index_item_container';
 import OwnEventsContainer from './hosted/own_events_container';
 import TicketsIndexContainer from './tickets/tickets_index_container';
+import Modal from './modal/modal'
 
 const App = () => (
     <div>
+        <Modal />
         <Switch>
             <AuthRoute exact path='/login' component={LoginFormContainer}/>
             <AuthRoute exact path='/signup' component={SignupFormContainer}/>
