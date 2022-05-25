@@ -17,6 +17,7 @@ import LikesIndex from './like/likes_index';
 import LikesIndexContainer from './like/likes_index_container';
 import LikesIndexItemContainer from './like/likes_index_item_container';
 import OwnEventsContainer from './hosted/own_events_container';
+import TicketsIndexContainer from './tickets/tickets_index_container';
 
 const App = () => (
     <div>
@@ -33,7 +34,9 @@ const App = () => (
             <Route exact path='/edit/:eventId' component={EditEventFormContainer}/>
             <ProtectedRoute exact path='/likes' component={LikesIndexContainer}/>
             {/* <Route exact path='/likes/:likeId' component={LikesIndexItemContainer}/> */}
-            <Route exact path ='/own' component={OwnEventsContainer}/>
+            <ProtectedRoute exact path ='/own' component={OwnEventsContainer}/>
+            <Route exact path='/tix' component={TicketsIndexContainer}/>
+
 
 
         </Switch>

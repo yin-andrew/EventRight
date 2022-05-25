@@ -22,10 +22,6 @@ function Navbar(props) {
         });
     }
 
-    const iconStyle = {
-        
-    }
-
     if (!props) {
         return null;
     }
@@ -71,8 +67,8 @@ function Navbar(props) {
                                         <div onClick={()=>props.history.push('/own')} className="drop-hosted">
                                             Manage my events
                                         </div>
-                                        <div className="drop-tix">
-                                            Tickets(#) - coming soon
+                                        <div onClick={()=>props.history.push('/tix')} className="drop-tix">
+                                            Tickets
                                         </div> 
                                         <div onClick={()=>props.history.push('/likes')} className="drop-like">
                                             Liked

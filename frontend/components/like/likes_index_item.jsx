@@ -25,7 +25,7 @@ function LikesIndexItem(props) {
     } else {
         return(
             <div className="likes-index-content">
-                {unLike()}     
+                {/* {unLike()}      */}
                 <div className="likes-item-list">
                     <div className="likes-item-body">
                         <Link to={`/events/${props.event.id}`} className="likes-item-title">{props.event.title}</Link>

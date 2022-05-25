@@ -8,8 +8,7 @@ export const fetchTickets = () => (
 export const fetchTicket = ticketId => (
     $.ajax({
         method: 'POST',
-        url: `api/tickets/${ticketId}`,
-        data: { ticketId }
+        url: `api/tickets/${ticketId}`
     })
 );
 

@@ -126,14 +126,15 @@
     z-index: 1;
     color: white;
     font-size: 5rem;
-    font-weight: 600;
+    font-weight: 700;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .home-index-container {
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .navbar-right-loggedin {
@@ -153,12 +154,13 @@
     right: 0%;
     pointer-events: none;
     transition: all 0.4s ease-in-out;
+    z-index: 100;
+    box-shadow: 0 12px 32px rgba(42, 50, 70, 0.10);
 }
 
 .navbar-right-loggedin:hover .navbar-dropdown {
     opacity: 1;
     pointer-events: all;
-    z-index: 1;
     transform: translateY(0px);
 }
 
