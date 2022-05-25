@@ -72,7 +72,7 @@
 
 .eventbrite-navbar-link {
     /* font-family: Raleway-Black; */
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     font-size: 30px;
     font-weight: 600;
     color: #ff4500;
@@ -102,17 +102,25 @@ input[type=search] {
 
 }
 
+.nav-search-container {
+    /* border: 3px solid green; */
+    height: 60%;
+    width: 60%;
+}
+
 .navbar-search {
-    background-color: lightgray;
-    height: 100%;
+    text-decoration: none;
+    background-color: #f8f7fa;
+    border: 1px solid #f8f7fa;
+    height: 40px;
     width: 150%;
     display: flex;
     justify-content: start;
     align-items: center;
     font-size: 14px;
     color: gray;
-    /* padding: 1%; */
-    border-radius: 4px;
+    padding-left: 3%;
+    border-radius: 5px;
 }
 
 .navbar-search:hover {
