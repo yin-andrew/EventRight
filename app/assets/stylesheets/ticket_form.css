@@ -7,13 +7,14 @@
 }
 
 .tix-form-left {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width: 630px;
     height: 600px;
 }
 
 .tix-form-title {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    border-bottom: 1px solid lightgray;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +31,7 @@
 }
 
 .tix-form-body {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     width: 100%;
     height: 450px;
     display: flex;
@@ -40,14 +41,14 @@
 }
 
 .tix-form-info {
-    border: 2px solid violet;
+    /* border: 2px solid violet; */
     width: 67%;
     height: 92%;
     padding: 4%;
 }
 
 .tix-form-date {
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
     width: 96%;
     padding: 2%;
     height: 30px;
@@ -57,14 +58,20 @@
 }
 
 .get-tix {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     height: 55px;
     width: 100%;
     display: flex;
     /* padding-left: 3%;
     padding-right: 3%;
     padding-top: 5px; */
+    padding: 2%;
     justify-content: space-between;
+}
+
+.liner {
+    width: 100%;
+    border-top: 1px solid lightgray;
 }
 
 .tix-form-price {
@@ -110,8 +117,9 @@
 
 
 .tix-form-right {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 270px;
     height: 100%;
+    border-left: 1px solid lightgray;
 }
 

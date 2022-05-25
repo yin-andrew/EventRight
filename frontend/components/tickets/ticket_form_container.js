@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     createTicket: ticket =>dispatch(createTicket(ticket)),
-    closeModal: ()=>dispatch(closeModal)
+    closeModal: ()=>dispatch(closeModal())
 });
 
 export default withRouter(connect(mSTP, mDTP)(ticketForm));

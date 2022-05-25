@@ -36,15 +36,15 @@ function EventShow(props) {
             <NavbarContainer />
             <div className="event-show-struct">
                     <div className="show-photo-container">
-                        {/* <img src={props.event.photoUrl} className="show-photo-opaque" /> */}
-                        <img src={window.testPhoto} className="show-photo-opaque" />
+                        <img src={props.event.photoUrl} className="show-photo-opaque" />
+                        {/* <img src={window.testPhoto} className="show-photo-opaque" /> */}
                     </div>
                     <div className="show-info">
                         <div className="show-top">
                             <div className="show-photo-basics">
                                 <div className="show-photo-wrapper">
-                                    {/* <img src={props.event.photoUrl} className="show-photo-top" />   */}
-                                    <img src={window.testPhoto} className="show-photo-top" />
+                                    <img src={props.event.photoUrl} className="show-photo-top" />  
+                                    {/* <img src={window.testPhoto} className="show-photo-top" /> */}
                                 </div>
                                 <div className="show-basics">
                                     <div className="basics-date">{props.event.date}</div>

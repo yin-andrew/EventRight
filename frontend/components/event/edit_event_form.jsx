@@ -2,10 +2,23 @@ import React from "react";
 import { useEffect,useState } from "react";
 import { Link } from 'react-router-dom';
 import NavbarContainer from "../navbar/navbar_container";
+import regeneratorRuntime from "regenerator-runtime";
 
 function EditEvent(props) {
-    const [event, setEvent] = useState(props.event);
+    const [event, setEvent] = useState(null);
 
+    // useEffect(()=>{props.fetchEvent(props.match.params.eventId)})
+    
+    useEffect(()=>{
+        const fetchdata = async ()=>{
+            let fetchedEvent = await props.fetchEvent(props.match.params.eventId);
+            // console.log("parsed",parsedEvent.event);
+            setEvent(fetchedEvent.event);
+
+        }
+        fetchdata();
+    }, []);
+    
     //events creation errors handling??
 
     const handleErrors = () => {
@@ -44,18 +57,22 @@ function EditEvent(props) {
         formData.append('event[photo]', event.photoUrl);
 
         console.log('form:', formData);
-        props.updateEvent(formData).then(()=>props.history.push('/sho'));
+        props.updateEvent(formData).then(()=>props.history.push(`/events/${event.id}`));
         //push to home and render new event in the home page
     };
 
     //
-    if (!props.event) {
+    if (!event) {
+        console.log("no event");
         return null;
     }
 
     return (
+        // {!props.event ? null :}
         <div>
             <NavbarContainer />
+            {console.log("props event", props.event)}
+            {console.log("event", event)}
 
             <div className="create-form-container">
                 <div className="create-form-header">

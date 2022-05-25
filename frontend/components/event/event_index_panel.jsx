@@ -17,7 +17,7 @@ function EventPanel(props) {
             {/* {seeL()} */}
             <div className="panel-image-container">
                 <Link to={`/events/${props.event.id}`}>
-                    {/* <img src={event.photoUrl} className="test-img"alt="" /> */}
+                    {/* <img src={props.event.photoUrl} className="test-img"alt="" /> */}
                 </Link>
             
             </div>

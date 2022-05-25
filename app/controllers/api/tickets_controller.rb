@@ -16,7 +16,7 @@ class Api::TicketsController < ApplicationController
 
     def create 
         @ticket = Ticket.new(ticket_params)
-        if @ticket 
+        if @ticket.save 
             render :show
         else
             render json: ['unable to purchase ticket please try again'], status: 422
@@ -36,7 +36,7 @@ class Api::TicketsController < ApplicationController
 
     private
     def ticket_params 
-        params.require(:ticket).permit(:id, :quantity, :event_id, :user_id)
+        params.require(:ticket).permit(:quantity, :event_id, :user_id)
     end
 
 end

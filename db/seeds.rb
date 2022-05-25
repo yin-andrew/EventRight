@@ -17,6 +17,7 @@ require 'open-uri'
 User.destroy_all
 Event.destroy_all
 Like.destroy_all
+Ticket.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('events')
@@ -37,6 +38,9 @@ l5 = Like.create(event_id: 9, user_id: 2)
 l6 = Like.create(event_id: 14, user_id: 2)
 
 l7 = Like.create(event_id: 17, user_id: 3)
+
+t1 = Ticket.create(quantity: 3, event_id: 5, user_id:1)
+t2 = Ticket.create(quantity: 1, event_id: 14, user_id:1)
 
 e1 = Event.create(
     title: 'Toasted Life Summer Outdoor Block Party', 

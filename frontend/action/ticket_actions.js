@@ -42,13 +42,13 @@ export const fetchTicket = ticketId => dispatch => (
             errors => dispatch(receiveTicketErrors(errors.responseJSON)))
 );
 
-export const createTicket = ticket =>dispatch => (
+export const createTicket = ticket => dispatch => (
     TicketApiUtil.createTicket(ticket)
         .then(ticket=>dispatch(receiveTicket(ticket)), 
             errors => dispatch(receiveTicketErrors(errors.responseJSON)))
 );
 
-export const deleteTicket = ticketId =>dispatch => (
+export const deleteTicket = ticketId => dispatch => (
     TicketApiUtil.deleteTicket(ticketId)
         .then(()=>dispatch(removeTicket(ticketId)), 
             errors => dispatch(receiveTicketErrors(errors.responseJSON)))
