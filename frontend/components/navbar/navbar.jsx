@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import EventIndexContainer from "../event/event_index_container";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faHeart as farHeart, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import SearchBarContainer from "../search/search_bar_container";
 
 
 function Navbar(props) {
@@ -35,9 +36,12 @@ function Navbar(props) {
                             <div className="eventbrite-navbar-link">
                                 <Link to="/" className="eventbrite-logo-link">eventright</Link>
                             </div>
-                            <div className="navbar-search">
-                                <div className="search"> Search Events</div> 
+                            <div className="nav-search-container">
+                                <SearchBarContainer />
+
                             </div>
+                            {/* <div className="navbar-search">
+                            </div> */}
                         </div>
                         <div className="navbar-right">
                             <div className="navbar-right-create">

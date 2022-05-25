@@ -19,6 +19,7 @@ import LikesIndexItemContainer from './like/likes_index_item_container';
 import OwnEventsContainer from './hosted/own_events_container';
 import TicketsIndexContainer from './tickets/tickets_index_container';
 import Modal from './modal/modal'
+import SearchResultsContainer from './search/search_results_container';
 
 const App = () => (
     <div>
@@ -38,6 +39,7 @@ const App = () => (
             {/* <Route exact path='/likes/:likeId' component={LikesIndexItemContainer}/> */}
             <ProtectedRoute exact path ='/own' component={OwnEventsContainer}/>
             <Route exact path='/tix' component={TicketsIndexContainer}/>
+            <Route exact path="/search-results" component={SearchResultsContainer}></Route>
 
 
 

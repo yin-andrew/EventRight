@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do 
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
-    resources :events, only: [:create, :index, :destroy, :update, :show]
+    resources :events, only: [:create, :index, :destroy, :update, :show] do
+      collection do
+        get :search, to: "events#search", as: "search"
+      end 
+    end
     resources :tickets, only: [:create, :index, :show, :destroy]
     resources :likes, only: [:create, :index, :destroy, :show]
+    
   end
 
 end

@@ -43,6 +43,17 @@ class Api::EventsController < ApplicationController
         #redirect to user show page with notice of successful deletion
     end
 
+
+    def search 
+        query = params[:query]
+        @events = Event.where('title ILIKE ? OR description ILIKE ?', "%#{query}%", "%#{query}%")
+        if @events.length > 0
+            render :index
+        else
+            render json: ["Sorry, no results found for #{query}"], status:404
+        end
+    end
+
     private 
     def event_params
         params.require(:event).permit(:id,:title, :description, :date, :start_time, :end_time, :creator_id, :price, :address, :photo).select {|x,v| v.present?}

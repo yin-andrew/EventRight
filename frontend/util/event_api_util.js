@@ -40,4 +40,11 @@ export const deleteEvent = eventId => (
     })
 );
 
+export const searchEvents = query => (
+    $.ajax({
+        method: 'GET',
+        url:'api/events/search',
+        data: { query }
+    })
+);
 

@@ -5,9 +5,16 @@ export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const REMOVE_EVENT = 'REMOVE_EVENT';
 export const RECIEVE_EVENT_ERRORS = 'RECIEVE_EVENT_ERRORS';
 export const REMOVE_EVENT_ERRORS = 'REMOVE_EVENT_ERRORS';
+export const RECEIVE_SEARCHED_EVENTS = 'RECEIVE_SEARCHED_EVENTS';
+export const CLEAR_EVENTS = 'CLEAR_EVENTS';
 
 const receiveEvents = events => ({
     type: RECEIVE_EVENTS,
+    events
+});
+
+const receivedSearchEvents = events => ({
+    type: RECEIVE_SEARCHED_EVENTS,
     events
 });
 
@@ -20,6 +27,10 @@ const removeEvent = eventId => ({
     type: REMOVE_EVENT,
     eventId
 });
+
+export const clearEvents = () => ({
+    type: CLEAR_EVENTS
+})
 
 const receiveErrors = errors => ({
     type: RECIEVE_EVENT_ERRORS,
@@ -58,6 +69,11 @@ export const deleteEvent = eventId => dispatch => (
     EventApiUtil.deleteEvent(eventId)
         .then(()=> dispatch(removeEvent(eventId)),
             errors => dispatch(receiveErrors(errors.responseJSON)))
+);
+
+export const searchEvents = query => dispatch => (
+    EventApiUtil.searchEvents(query)
+        .then(events=> dispatch(receivedSearchEvents(events)))
 );
 
 

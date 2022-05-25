@@ -1,31 +1,16 @@
-import React, { useEffect, useState } from "react";
-import EventPanel from "./event_index_panel";
-import EventIndexPanelContainer from "./event_index_panel_container";
+import React, { useEffect } from "react";
+import NavbarContainer from "../navbar/navbar_container";
+import EventIndexPanelContainer from "../event/event_index_panel_container";
 
-function EventIndex(props) {
-
-    const [events, setEvents] = useState([]);
-
-    useEffect(()=> {props.fetchEvents()}, [])
-    
-    // useEffect(()=> {
-    //     const fetchAll = async () => {
-    //         let allEvents = await props.fetchEvents();
-    //         let parsedEvents = Object.values(allEvents.events);
-    //         console.log('all', allEvents);
-    //         setEvents(parsedEvents);
-    //     }
-    //     fetchAll()
-
-    // }, []);
-
-    useEffect(()=>{
-        if (props.currentUser) {
-            props.fetchLikes()
+function SearchResults(props) {
+    useEffect(()=> {
+        
+        return ()=> {
+            // props.clearEvents();
+            props.fetchEvents();
         }
     }, []);
 
-    
     let likerenjoyers;
     const setL = () => {
         likerenjoyers = props.likes.map(likes=> likes.event_id);
@@ -33,16 +18,20 @@ function EventIndex(props) {
         //likerenjoyers now contains the ids of liked events
     }
 
-    if (!props.likes || !props.events) {
-        return null;
-    }
+    // if (!props.events) {
+    //     return null;
+    // }
 
     return (
-        <div className="events-index-container">
+        <div>
+            <NavbarContainer />
+            <div className="events-index-container">
             {setL()}
             <div className="index-header">
-                <div style={{width: '15%', height:'100%'}} className="dummy"></div>
-                Popular in San Francisco
+                {/* <div style={{width: '15%', height:'100%'}} className="dummy">
+
+                </div> */}
+                Search Results
             </div>
             <div className="index-panels-container">
                 <div className="index-panels-wrapper">
@@ -59,7 +48,9 @@ function EventIndex(props) {
                 </div>
             </div>
         </div>
+        </div>
     );
+    
 }
 
-export default EventIndex;
+export default SearchResults;
