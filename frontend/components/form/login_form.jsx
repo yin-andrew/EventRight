@@ -8,14 +8,12 @@ function LoginForm(props) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log('ay');
         props.login(user).then(()=>props.history.push('/user/show'));
         //if errors dont redirect
     };
 
     const demo = e => {
         e.preventDefault();
-        console.log('demo login');
         let demoUser = {
             email: 'test@mail.com',
             password: '123456'

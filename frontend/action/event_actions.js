@@ -73,7 +73,8 @@ export const deleteEvent = eventId => dispatch => (
 
 export const searchEvents = query => dispatch => (
     EventApiUtil.searchEvents(query)
-        .then(events=> dispatch(receivedSearchEvents(events)))
+        .then(events=> dispatch(receivedSearchEvents(events)),
+            errors=> dispatch(receiveErrors(errors.responseJSON)))
 );
 
 

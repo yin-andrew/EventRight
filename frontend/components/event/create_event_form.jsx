@@ -11,6 +11,13 @@ function CreateEvent(props) {
     useEffect(()=>{props.clearEventErrors()},[]);
     // useEffect(()=>window.scrollTo(0,0), props.errors);
 
+    // useEffect(()=> {
+    //     const clearingErrors = async ()=> {
+    //         await props.clearEventErrors();
+    //     }
+    //     clearingErrors();
+    // }, []);
+
     const handleErrors = () => {
         if (props.errors.length ===0) {
             return null;
@@ -32,7 +39,6 @@ function CreateEvent(props) {
     }
 
     const handleSubmit = e => {
-        console.log('event', event);
         e.preventDefault();
         const formData = new FormData();
         formData.append('event[title]', event.title);
@@ -63,6 +69,10 @@ function CreateEvent(props) {
                         {/* value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})} */}
 
     // if (!props.currentUser) {
+    //     return null;
+    // }
+
+    // if (props.errors) {
     //     return null;
     // }
 

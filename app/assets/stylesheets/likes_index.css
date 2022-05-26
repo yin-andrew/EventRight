@@ -23,6 +23,7 @@
     /* border: 2px solid red; */
     min-width: 1000px;
     min-height: 225px;
+
 }
 
 .likes-header-text {
@@ -33,14 +34,19 @@
     color: #1e0a3c;
     font-size: 48px;
     margin-top: 10%;
-    margin-bottom: 2%;
-    padding-left: 3%;
+    /* margin-bottom: 2%; */
+    padding-left: 10%;
 }
 
 .likes-index-content {
     /* border: 2px solid purple; */
     width: 100%;
     height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .likes-item-list {
@@ -50,11 +56,14 @@
     margin: 1%;
     padding: 12px;
     display: flex;
+    /* border: 1px solid #F5F5F5; */
+    box-shadow: 0 12px 32px rgba(42, 50, 70, 0.06);
+
 }
 
 .likes-item-list:hover {
-    transform: scale(1.01);
-    box-shadow: 0 12px 32px rgba(42, 50, 70, 0.10);
+    /* transform: scale(1.01); */
+    box-shadow: 0 12px 32px rgba(42, 50, 70, 0.11);
 }
 
 .likes-item-photo-container {
@@ -65,7 +74,7 @@
 }
 
 .likes-photo {
-    max-width: 180px;
+    max-width: 200px;
     height: auto;
     width: auto;
 }
@@ -77,19 +86,23 @@
     width: 180px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 .index-item-unlike {
     /* border: 2px solid red; */
     font-size: 14px;
+    font-weight: 500;
     border-radius: 5px;
     background-color: #d1410c;
     color: white;
     width: 150px;
-    height: 20px;
-    text-align: center;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .index-item-unlike:hover {
@@ -98,7 +111,7 @@
 
 .likes-item-body {
     /* border: 2px solid blue; */
-    width: 528px;
+    width: 508px;
     height: 180px;
 }
 

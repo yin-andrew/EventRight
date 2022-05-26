@@ -22,7 +22,20 @@ function OwnEventsItem(props) {
                         <div className="likes-item-price">
                             Starts at ${props.event.price}
                         </div>
+                        <div className="own-actions">
+                            <div onClick={()=>props.history.push(`/edit/${props.event.id}`)} className="own-actions-btn">
+                                <div>
+                                    edit
+                                </div>
+                            </div>
+                            <div onClick={()=>props.deleteEvent(props.event.id)} className="own-actions-btn">
+                                <div>
+                                    delete
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div className="likes-item-right">
                         <div className="likes-item-photo-container">
                             <Link to={`/events/${props.event.id}`}>
@@ -34,12 +47,12 @@ function OwnEventsItem(props) {
                             {/* <div onClick={()=>props.deleteLike(props.like.id)} className="index-item-unlike">
                                 Remove
                             </div> */}
-                            <div onClick={()=>props.history.push(`/edit/${props.event.id}`)} className="index-item-unlike">
+                            {/* <div onClick={()=>props.history.push(`/edit/${props.event.id}`)} className="index-item-unlike">
                                 edit
                             </div>
                             <div onClick={()=>props.deleteEvent(props.event.id)} className="index-item-unlike">
                                 delete event
-                            </div>
+                            </div> */}
                         </div>
                         
                     </div>

@@ -51,7 +51,9 @@ function LikesIndexItem(props) {
                         </div>
                         <div className="likes-item-status">
                             <div onClick={()=>props.deleteLike(props.like.id)} className="index-item-unlike">
-                                Remove
+                                <div>
+                                    Remove
+                                </div>
                             </div>
                         </div>
                     </div>

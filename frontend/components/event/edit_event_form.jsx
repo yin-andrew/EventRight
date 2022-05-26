@@ -63,7 +63,7 @@ function EditEvent(props) {
 
     //
     if (!event) {
-        console.log("no event");
+        // console.log("no event");
         return null;
     }
 

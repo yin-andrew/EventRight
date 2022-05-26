@@ -10,7 +10,6 @@ function Navbar(props) {
 
     const loggingout = e => {
         e.preventDefault();
-        console.log('logged out');
         /*
         running any kind of route to logging out changes current user
         which is a prop, use an if to return null to avoid error

@@ -3,10 +3,11 @@ import NavbarContainer from "../navbar/navbar_container";
 import EventIndexPanelContainer from "../event/event_index_panel_container";
 
 function SearchResults(props) {
+
     useEffect(()=> {
         
         return ()=> {
-            // props.clearEvents();
+            props.clearEventErrors();
             props.fetchEvents();
         }
     }, []);
@@ -16,6 +17,16 @@ function SearchResults(props) {
         likerenjoyers = props.likes.map(likes=> likes.event_id);
         // console.log("fetching the likes", likerenjoyers);
         //likerenjoyers now contains the ids of liked events
+    }
+
+    const handleErrors = () => {
+        if (props.errors.length ===0) {
+            return null;
+        } else {
+            console.log("props.errors", props.errors);
+            window.scrollTo(0,0);
+            return <ul className="login-errors-list">{props.errors.map((error,idx)=>(<li key={idx }>{error}</li>))}</ul>
+        } 
     }
 
     // if (!props.events) {
@@ -33,6 +44,7 @@ function SearchResults(props) {
                 </div> */}
                 Search Results
             </div>
+            {handleErrors()}
             <div className="index-panels-container">
                 <div className="index-panels-wrapper">
                     <div className="default-wrappa">

@@ -32,9 +32,6 @@ function EventPanel(props) {
                         <div className="event-panel-price"> Starts at ${props.event.price} </div>
                         <div className="event-panel-creator">
                             jeff
-                            <br />
-                            <br />
-                            30m followers
                         </div>
 
 

@@ -5,7 +5,7 @@ import { createTicket } from "../../action/ticket_actions";
 import ticketForm from "./ticket_form";
 
 const mSTP = (state, ownProps) => {
-    console.log('op', ownProps);
+    // console.log('op', ownProps);
     return {
     currentUser: state.entities.users[state.session.id],
     ticket: {quantity: 0, event_id: parseInt(ownProps.modal), 

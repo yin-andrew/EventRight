@@ -4,7 +4,6 @@ const eventsErrorsReducer = (state=[], action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECIEVE_EVENT_ERRORS:
-            console.log("events-action",action);
             return action.errors;
         case REMOVE_EVENT_ERRORS:
             return [];
