@@ -1,9 +1,16 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .create-form-container {
     /* border: 4px solid green; */
     border-top: 1px solid lightgray;
     width: 100%;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .create-form-header {
@@ -26,25 +33,94 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.form-struct {
+    /* border: 2px solid palevioletred; */
+    width: 80%;
+    height: 100%;
+}
+
+.create-info-group {
+    /* border: 2px solid orange; */
+    border-bottom: 1px solid lightgray;
+    height: 160px;
+    width: 100%;
+    padding-top: 3%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content; */
+}
+.create-desc-group {
+    /* border: 2px solid orange; */
+    /* height: fit-content; */
+    width: 100%;
+    padding-top: 3%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content; */
+    padding-bottom: 3%;
+    border-bottom: 1px solid lightgray;
+}
+
+.create-section-header {
+    /* border: 2px solid green; */
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.create-section-header div {
+    width: 60%;
+    font-size: 30px;
+    font-weight: 800;
+    color:#39364F;
+}
+
+.create-section-blurb {
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.create-section-blurb div {
+    width: 60%;
+    /* border: 2px solid lightgreen; */
+    color: #39364f;
+    padding: 1px 0px;
+}
+
+
+
 .form-create-structure {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: 2px solid blue; */
-    padding: 1%;
     border-radius: 1px;
-    min-height: 20vh;
+    min-height: 8vh;
 }
 
 .create-field-struct {
-    border: 2px solid gray;
+    border: 2px solid lightgray;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 60%;
-    height: 50%;
+    height: 40%;
+    padding: 2px 0px;
 }
 
 .input-create-outer {
@@ -54,31 +130,30 @@
     width: 99%;
     height: 35%;
     font-size: 14px;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     color: gray;
-    margin-left: 1%;
+    /* margin: 1%; */
 }
 
 .input-create-inner {
     /* border: 2px solid green; */
-    border: 0px;
-    font-size: 20px;
+    /* border: 0px; */
+    font-size: 16px;
     width: 99%;
     height: 25%;
     padding: 0;
-    margin-left: 1%;
+    /* margin-left: 1%; */
     max-height: 95%;
 }
 
 .input-create-inner-ta {
     text-decoration: none ;
-    border: none;
-    min-width: 98%;
-    max-width: 98%;
-    min-height: 200px;
+    /* border: 2px solid green; */
+    min-width: 60%;
+    max-width: 60%;
+    /* min-height: 200px; */
     /* height: 25%; */
-    padding: 0;
-    margin-left: 1%;
+    resize: vertical;
 }
 
 .submit-event {
@@ -97,9 +172,33 @@
     border-radius: 5px;
     background-color: #ff4500;
     color: white;
-    height: 50px;
+    height: 46px;
 }
 
 .submit-btn:hover {
     cursor: pointer;
+}
+
+.teststruct {
+    /* border: 1px solid black; */
+    position: relative;
+    width: 60%;
+    height: 40px;
+    padding: 2px;
+}
+
+.testput {
+    border: 1px solid lightgray;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+}
+
+.testlabel {
+    color: lightgray;
+    font-size: 14px;
+    left: 4px;
+    top: 2px;
+    position: absolute;
+    /* border: 1px solid green; */
 }

@@ -71,9 +71,7 @@ function EditEvent(props) {
         // {!props.event ? null :}
         <div>
             <NavbarContainer />
-            {console.log("props event", props.event)}
-            {console.log("event", event)}
-
+            {handleErrors()}
             <div className="create-form-container">
                 <div className="create-form-header">
                     <div className="create-header-text">

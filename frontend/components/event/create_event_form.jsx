@@ -113,20 +113,153 @@ function CreateEvent(props) {
                 </div>
                 <form onSubmit={handleSubmit} className="form-struct">
 
-                    <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Event Title</label>
-                            <input type="text" className="input-create-inner" placeholder="Be clear and descriptive" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
-                        </div>
-                    </div>
-                    <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Description</label>
-                            <textarea className="input-create-inner-ta" rows="8" cols="135" placeholder="Write about your event" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+                    <div className="create-info-group">
+                        <div className="create-section-header">
+                            <div>Event Title</div>
+                        </div>        
+                        <div className="create-section-blurb">
+                            <div>
+                                Name your event and tell event-goers why they should come. Add details
+                                that highlight what makes it unique.
 
+                            </div>
+                        </div>
+
+                        <div className="form-create-structure">
+                            {/* <div className="create-field-struct">
+                                <label className="input-create-outer">Event Title</label>
+                                <input type="text" className="input-create-inner" placeholder="Be clear and descriptive" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
+                            </div> */}
+
+
+                            <div className="teststruct">
+                                <input type="text" className="testput" placeholder="Be clear and descriptive" value={event.title} onChange={(e)=>setEvent({...event, title: e.target.value})}/>
+                                <div className="testlabel">
+                                    Event Title
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="form-create-structure">
+
+                    <div className="create-info-group">
+                        <div className="create-section-header">
+                            <div>Location</div>
+                        </div>        
+                        <div className="create-section-blurb">
+                            <div>
+                                Help people in the area discover your event and let attendees know where to show up.
+                            </div>
+                        </div>
+
+                        <div className="form-create-structure">
+                            <div className="teststruct">
+                                <input type="text" className="testput" placeholder="Input your venue or address" value={event.address} onChange={(e)=>setEvent({...event, address: e.target.value})}/>
+                                <div className="testlabel">Venue Location</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="create-desc-group">
+                        <div className="create-section-header">
+                            <div>Date and Time</div>
+                        </div>        
+                        <div className="create-section-blurb">
+                            <div>
+                                Tell event-goers when your event starts and ends so they can make plans to attend.
+                            </div>
+                        </div>
+
+                        <div className="form-create-structure">
+                            <div className="teststruct">
+                                <input type="text" className="testput" placeholder="Enter a date like 'Fri, May 2, 2022'" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})} />
+                                <div className="testlabel">
+                                    Date
+                                </div>
+                            </div>
+                            <br />
+                            <div className="teststruct">
+                                <input type="text" className="testput" placeholder="Enter a time like 7:00 AM PDT" value={event.start_time} onChange={(e)=>setEvent({...event, start_time: e.target.value})} />
+                                <div className="testlabel">
+                                    Start Time
+                                </div>
+                            </div>
+                            <br />
+                            <div className="teststruct">
+                                <input type="text" className="testput" placeholder="Enter a time like 7:00 PM PDT" value={event.end_time} onChange={(e)=>setEvent({...event, end_time: e.target.value})}/>
+                                <div className="testlabel">
+                                    End Time
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="create-info-group">
+                        <div className="create-section-header">
+                            <div>Price</div>
+                        </div>        
+                        <div className="create-section-blurb">
+                            <div>
+                                What is the cost of tickets for this event?
+                            </div>
+                        </div>
+                        <div className="form-create-structure">
+                            <div className="teststruct">
+                                <input type="text" className="testput" placeholder="$" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
+                                <div className="testlabel">Price</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div className="create-desc-group">
+                        <div className="create-section-header">
+                            <div>Description</div>
+                        </div>        
+                        <div className="create-section-blurb">
+                            <div>
+                                Give a small summary about the event and any additional details
+                            </div>
+                        </div>
+                        <div className="form-create-structure">
+                            <textarea className="input-create-inner-ta" rows="8" cols="135" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+                        </div>
+                    </div>
+
+                    <div className="create-info-group">
+                        <div className="create-section-header">
+                            <div>Photo</div>
+                        </div>        
+                        <div className="create-section-blurb">
+                            <div>
+                                Add a banner photo for your event
+                            </div>
+                        </div>
+                        <div className="form-create-structure">
+                            <div className="teststruct">
+                                <input type="file" className="testput" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <div className="create-info-group">
+                        <div className="create-section-header">
+                            <div>
+                                Description
+                            </div>
+                        </div>        
+                        <div className="form-create-structure">
+                            <div className="create-field-struct">
+                                <label className="input-create-outer">Description</label>
+                                <textarea className="input-create-inner-ta" rows="8" cols="135" placeholder="Write about your event" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+                            </div>
+                        </div>
+                    </div> */}
+
+                    
+
+                    
+                    {/* <div className="form-create-structure">
                         <div className="create-field-struct">
                             <label className="input-create-outer">Date (enter like "Fri, May 2, 2021")</label>
                             <input type="text" className="input-create-inner" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})}/>
@@ -162,11 +295,11 @@ function CreateEvent(props) {
                             <label className="input-create-outer">Event Photo</label>
                             <input type="file" className="input-create-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
                         </div>
-                    </div>
+                    </div> */}
                    
                     <div className="submit-event">
                             <button className="submit-btn">
-                            Create Event
+                                Create Event
                             </button>     
                     </div>
                 </form>

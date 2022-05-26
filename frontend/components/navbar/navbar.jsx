@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import EventIndexContainer from "../event/event_index_container";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,6 +7,8 @@ import SearchBarContainer from "../search/search_bar_container";
 
 
 function Navbar(props) {
+
+    useEffect(()=>{window.scrollTo(0,0)});
 
     const loggingout = e => {
         e.preventDefault();
