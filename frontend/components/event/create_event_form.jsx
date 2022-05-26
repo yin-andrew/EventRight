@@ -27,17 +27,6 @@ function CreateEvent(props) {
         } 
     }
 
-    const loggingout = e => {
-        e.preventDefault();
-        console.log('logged out');
-        /*
-        running any kind of route to logging out changes current user
-        which is a prop, use an if to return null to avoid error
-        */
-        // props.logout().then(()=> <Redirect to='/' />);
-        props.logout().then(()=>props.history.push('/login'))
-    }
-
     const handleSubmit = e => {
         e.preventDefault();
         const formData = new FormData();
@@ -79,29 +68,6 @@ function CreateEvent(props) {
     return (
         <div>
             <NavbarContainer />
-            {/* <div className="navbar-page-struct">
-                <div className="navbar-structure">
-                    <div className="navbar-left">
-                        <div className="eventbrite-navbar-link">
-                            <Link to="/" className="eventbrite-logo-link">eventright</Link>
-                        </div>
-                        <div className="navbar-search">
-                            <div className="search"> Search Events</div> 
-                        </div>
-                    </div>
-                    <div className="navbar-right">
-                        <div className="navbar-right-login">
-                            <Link to='/login' className="navbar-link">Likes</Link>
-                        </div>
-                        <div className="navbar-right-signup">
-                            <Link to='/signup' className="navbar-link">Welcome</Link>
-                        </div>
-                        <div className="navbar-right-logout">
-                            <div onClick={loggingout}>Logout</div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
 
             {handleErrors()}
 
@@ -236,8 +202,8 @@ function CreateEvent(props) {
                             </div>
                         </div>
                         <div className="form-create-structure">
-                            <div className="teststruct">
-                                <input type="file" className="testput" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
+                            <div className="teststructphoto">
+                                <input type="file" className="testputphoto" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
                             </div>
                         </div>
                     </div>

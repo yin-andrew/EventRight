@@ -41,12 +41,11 @@ function Navbar(props) {
                                 <SearchBarContainer />
 
                             </div>
-                            {/* <div className="navbar-search">
-                            </div> */}
                         </div>
+
                         <div className="navbar-right">
                             <div className="navbar-right-create">
-                                <Link to='/create' className="navbar-link">
+                                <Link to='/create' className="navbar-link" style={{color: "#3D64FF"}}>
                                     <FontAwesomeIcon icon={faPlus} />
                                     <div>
                                         Create an Event              
@@ -94,16 +93,6 @@ function Navbar(props) {
                         </div>
                     </div>
                 </div>
-                {/* <div className="banner-container">
-                    <img src={window.heroBanner} alt="" className="banner-photo"/>
-                    <div className="banner-text">Find your people.</div>
-                </div> */}
-
-                {/* <div className="home-index-container">
-                    <EventIndexContainer />
-                    
-                </div> */}
-
             </div>
         );
     } else {

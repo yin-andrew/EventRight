@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => {
     console.log("ownProps", ownProps);
     return{
     event: state.entities.events[ownProps.match.params.eventId],
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    errors: state.errors.events
 }};
 
 const mDTP = dispatch => ({
