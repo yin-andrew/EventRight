@@ -8,19 +8,17 @@ function LoginForm(props) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log('ay');
         props.login(user).then(()=>props.history.push('/user/show'));
         //if errors dont redirect
     };
 
     const demo = e => {
         e.preventDefault();
-        console.log('demo login');
         let demoUser = {
-            email: 'test3',
+            email: 'test@mail.com',
             password: '123456'
         };
-        props.login(demoUser).then(()=>props.history.push('/user/show'));
+        props.login(demoUser).then(()=>props.history.push('/'));
     }
 
 
@@ -46,7 +44,7 @@ function LoginForm(props) {
                     <div className="login-header">
                         <div className="login-header-left">
                             <div className="eventbrite-login-link">
-                                <Link to="/" className="eventbrite-logo-link">eventbrite</Link>
+                                <Link to="/" className="eventbrite-logo-link">eventright</Link>
                             </div>
                             <h1 className="login-header-title">Log in</h1>
                         </div>

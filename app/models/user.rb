@@ -7,6 +7,22 @@ class User < ApplicationRecord
     
     after_initialize :ensure_session_token
 
+    has_many :created_events,
+        primary_key: :id,
+        foreign_key: :creator_id,
+        class_name: :Event
+
+
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Like
+    
+    has_many :liked_events,
+        through: :likes,
+        source: :event
+
+
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)
         if @user && @user.is_password?(password)

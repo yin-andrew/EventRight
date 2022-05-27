@@ -1,0 +1,215 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar-page-struct {
+    height: 9vh;
+    width: 100%;
+    /* border: 5px solid yellowgreen; */
+
+}
+
+.navbar-structure {
+    /* border: 3px solid green; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-left {
+    display: flex;
+    /* border: 2px solid red; */
+    width: 40%;
+    height: 100%;
+    font-size: 32px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-right {
+    display: flex;
+    /* border: 2px solid purple; */
+    width: 40%;
+    font-size: 14px;
+    justify-content: end;
+}
+
+.navbar-right-signup,
+.navbar-right-login,
+.navbar-right-logout,
+.navbar-right-create,
+.navbar-right-loggedin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.navbar-right-login:hover,
+.navbar-right-signup:hover,
+.navbar-right-logout:hover,
+.navbar-right-create:hover,
+.navbar-right-loggedin:hover {
+    cursor: pointer;
+    background-color: #ececec;
+}
+
+.navbar-right-create {
+    color: #3D64FF !important;
+}
+
+.navbar-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #39364F;
+}
+
+.eventbrite-navbar-link {
+    /* font-family: Raleway-Black; */
+    /* border: 2px solid orange; */
+    font-size: 30px;
+    font-weight: 600;
+    color: #ff4500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    height: fit-content;
+}
+
+/* .navbar-search {
+    border: 3px solid pink;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+input[type=search] {
+    -moz-appearance: none;
+    /* older firefox */
+    -webkit-appearance: none;
+    /* safari, chrome, edge and ie mobile */
+    appearance: none;
+    /* rest */
+
+}
+
+.nav-search-container {
+    /* border: 3px solid green; */
+    height: 60%;
+    width: 60%;
+}
+
+.navbar-search {
+    text-decoration: none;
+    background-color: #f8f7fa;
+    border: 1px solid #f8f7fa;
+    height: 40px;
+    width: 150%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 14px;
+    color: gray;
+    padding-left: 3%;
+    border-radius: 5px;
+}
+
+.navbar-search:hover {
+    cursor: pointer;
+}
+
+.banner-container {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-photo {
+    width: 100%;
+    position: absolute;
+    margin-top: -25%;
+}
+
+.banner-text {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    font-size: 5rem;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.home-index-container {
+    /* border: 2px solid black; */
+}
+
+.navbar-right-loggedin {
+    text-decoration: none;
+    position: relative;
+    color: #39364F;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar-dropdown {
+    position: absolute;
+    background-color: white;
+    width: 300px;
+    height: 302px;
+    margin-top: 26px;
+    opacity: 0;
+    right: 0%;
+    pointer-events: none;
+    transition: all 0.4s ease-in-out;
+    z-index: 100;
+    box-shadow: 0 12px 32px rgba(42, 50, 70, 0.10);
+}
+
+.navbar-right-loggedin:hover .navbar-dropdown {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+}
+
+.navbar-dropdown div {
+    /* border: 2px solid rebeccapurple; */
+    height: 35px;
+    width: 95%;
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navbar-dropdown div:hover {
+    cursor: pointer;
+    background-color: #ececec;
+}
+
+.drop-like {
+    /* border: 2px solid rebeccapurple; */
+    text-decoration: none;
+    color: #39364F;
+    width: 300px;
+    height: 50px;
+}
+
+.drop-tix {
+    border-top: 1px solid lightgray;
+}
+
+.drop-logout {
+    border-top: 1px solid lightgray;
+}

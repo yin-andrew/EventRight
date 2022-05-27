@@ -8,7 +8,6 @@ function SignupForm(props) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(props);
         props.signup(user).then(()=>props.history.push('/user/show'));
     };
 
@@ -26,13 +25,14 @@ function SignupForm(props) {
     // }
 
     return (
+        
         <div className="login-structure">
             <div className="login-split-left">
                 <div className="signup-container">
                     <div className="signup-header">
                         <div className="login-header-left">
                             <div className="eventbrite-login-link">
-                                <Link to="/" className="eventbrite-logo-link">eventbrite</Link>
+                                <Link to="/" className="eventbrite-logo-link">eventright</Link>
                             </div>
                             <h1 className="signup-header-title">Create an account</h1>
                         </div>
