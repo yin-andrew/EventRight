@@ -19,19 +19,19 @@ function EditEvent(props) {
     useEffect(()=>{
         const fetchdata = async ()=>{
             let fetchedEvent = await props.fetchEvent(props.match.params.eventId);
-            console.log("fetched",fetchedEvent.event);
+            // console.log("fetched",fetchedEvent.event);
             delete fetchedEvent.event.photoUrl;
             await setEvent({...fetchedEvent.event, photoUrl: undefined});
-            console.log("firstevent", event);
+            // console.log("firstevent", event);
             // setEvent({...event, photoUrl: undefined});
             // setEvent({...event, photoUrl: null});
         }
         fetchdata();
-        console.log("newstate", event);
+        // console.log("newstate", event);
     }, []);
 
     const printo  = () => {
-        console.log("this is the event", event);
+        // console.log("this is the event", event);
     }
     
     //events creation errors handling??
@@ -50,7 +50,7 @@ function EditEvent(props) {
 
     const loggingout = e => {
         e.preventDefault();
-        console.log('logged out');
+        // console.log('logged out');
         /*
         running any kind of route to logging out changes current user
         which is a prop, use an if to return null to avoid error
@@ -60,7 +60,7 @@ function EditEvent(props) {
     }
 
     const handleSubmit = e => {
-        console.log('event', event);
+        // console.log('event', event);
         e.preventDefault();
         
         const formData = new FormData();
@@ -82,12 +82,12 @@ function EditEvent(props) {
         } 
 
         if (!event || event.photoUrl ==undefined || !event.photoUrl) {
-            console.log("here");
+            // console.log("here");
             props.updateEvent({});
             return
         }
 
-        console.log('form:', formData);
+        // console.log('form:', formData);
         props.updateEvent(formData).then(()=>props.history.push(`/events/${event.id}`));
         
 
@@ -120,7 +120,7 @@ function EditEvent(props) {
         // {!props.event ? null :}
         <div>
             <NavbarContainer />
-            {printo()}
+            {/* {printo()} */}
             <div className="create-form-container">
                 <div className="create-form-header">
                     <div className="create-header-text">

@@ -62,7 +62,7 @@ class Api::EventsController < ApplicationController
         if @events.length > 0
             render :index
         else
-            render json: ["Sorry, no results found for #{query}"], status:404
+            render json: ["Sorry, no results found for '#{query}'"], status:404
         end
     end
 

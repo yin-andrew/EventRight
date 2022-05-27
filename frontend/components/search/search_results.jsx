@@ -23,9 +23,9 @@ function SearchResults(props) {
         if (props.errors.length ===0) {
             return null;
         } else {
-            console.log("props.errors", props.errors);
+            // console.log("props.errors", props.errors);
             window.scrollTo(0,0);
-            return <ul className="login-errors-list">{props.errors.map((error,idx)=>(<li key={idx }>{error}</li>))}</ul>
+            return <ul className="create-errors-list">{props.errors.map((error,idx)=>(<li key={idx }>{error}</li>))}</ul>
         } 
     }
 

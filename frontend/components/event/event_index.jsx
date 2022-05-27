@@ -41,7 +41,7 @@ function EventIndex(props) {
         <div className="events-index-container">
             {setL()}
             <div className="index-header">
-                <div style={{width: '15%', height:'100%'}} className="dummy"></div>
+                {/* <div style={{width: '15%', height:'100%'}} className="dummy"></div> */}
                 Popular in San Francisco
             </div>
             <div className="index-panels-container">
