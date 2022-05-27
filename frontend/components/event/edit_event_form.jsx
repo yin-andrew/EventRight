@@ -14,21 +14,30 @@ function EditEvent(props) {
     const [event, setEvent] = useState(null);
 
     // useEffect(()=>{props.fetchEvent(props.match.params.eventId)})
+    useEffect(()=>{props.clearEventErrors()},[]);
     
     useEffect(()=>{
         const fetchdata = async ()=>{
             let fetchedEvent = await props.fetchEvent(props.match.params.eventId);
-            // console.log("parsed",parsedEvent.event);
-            setEvent(fetchedEvent.event);
-
+            console.log("fetched",fetchedEvent.event);
+            delete fetchedEvent.event.photoUrl;
+            await setEvent({...fetchedEvent.event, photoUrl: undefined});
+            console.log("event", event);
+            // setEvent({...event, photoUrl: undefined});
+            // setEvent({...event, photoUrl: null});
         }
         fetchdata();
+        console.log("newstate", event);
     }, []);
+
+    const printo  = () => {
+        console.log("this is the event", event);
+    }
     
     //events creation errors handling??
 
     const handleErrors = () => {
-        console.log("props errors", props.errors);
+        // console.log("props errors", props.errors);
         if (props.errors.length ===0) {
             return null;
         } else {
@@ -36,6 +45,8 @@ function EditEvent(props) {
             return <ul className="create-errors-list">{props.errors.map((error,idx)=>(<li key={idx}>{error}</li>))}</ul>
         } 
     }
+
+
 
     const loggingout = e => {
         e.preventDefault();
@@ -51,7 +62,12 @@ function EditEvent(props) {
     const handleSubmit = e => {
         console.log('event', event);
         e.preventDefault();
+        
         const formData = new FormData();
+        if (event.photoUrl ==undefined || !event.photoUrl) {
+            props.updateEvent({});
+        }
+
         formData.append('event[id]', event.id);
         formData.append('event[title]', event.title);
         formData.append('event[description]', event.description);
@@ -61,7 +77,10 @@ function EditEvent(props) {
         formData.append('event[creator_id]', props.currentUser.id);
         formData.append('event[price]', event.price);
         formData.append('event[address]', event.address);
-        formData.append('event[photo]', event.photoUrl);
+
+        if (event.photoUrl) {
+            formData.append('event[photo]', event.photoUrl);
+        } 
 
         console.log('form:', formData);
         props.updateEvent(formData).then(()=>props.history.push(`/events/${event.id}`));
@@ -78,13 +97,14 @@ function EditEvent(props) {
         // {!props.event ? null :}
         <div>
             <NavbarContainer />
-            {handleErrors()}
+            {printo()}
             <div className="create-form-container">
                 <div className="create-form-header">
                     <div className="create-header-text">
                         Update Your Event
                     </div>
                 </div>
+                {handleErrors()}
                 <form onSubmit={handleSubmit} className="form-struct">
 
                     <div className="create-info-group">

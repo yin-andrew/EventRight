@@ -64,6 +64,11 @@ export const updateEvent = event => dispatch => (
         .then(event=>dispatch(receiveEvent(event)),
             errors => dispatch(receiveErrors(errors.responseJSON)))
 );
+// export const updateEvent = event => dispatch => (
+//     EventApiUtil.updateEvent(event)
+//         .then(event=>dispatch(receiveEvent(event)),
+//             errors => console.log("errors", errors))
+// );
 
 export const deleteEvent = eventId => dispatch => (
     EventApiUtil.deleteEvent(eventId)

@@ -26,10 +26,11 @@ class Api::EventsController < ApplicationController
 
     def update
         @event = Event.find(params[:event][:id])
+        debugger
         if @event && @event.creator_id == current_user.id && @event.update(event_params)
             render :show
         else
-            render json: ['please fill in all fields and re-upload photo'], status: 422
+            render json: ['please fill in all fields and re-upload the photo'], status: 422
         end
     end
     
@@ -56,6 +57,6 @@ class Api::EventsController < ApplicationController
 
     private 
     def event_params
-        params.require(:event).permit(:id,:title, :description, :date, :start_time, :end_time, :creator_id, :price, :address, :photo).select {|x,v| v.present?}
+        params.require(:event).permit(:title, :description, :date, :start_time, :end_time, :creator_id, :price, :address, :photo)
     end
 end

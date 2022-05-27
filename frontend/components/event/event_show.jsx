@@ -27,7 +27,7 @@ function EventShow(props) {
     }
 
     if (!props.event) {
-        console.log('catch');
+        // console.log('catch');
         return null;
     } else {
         return(
