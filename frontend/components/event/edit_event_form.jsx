@@ -3,6 +3,12 @@ import { useEffect,useState } from "react";
 import { Link } from 'react-router-dom';
 import NavbarContainer from "../navbar/navbar_container";
 import regeneratorRuntime from "regenerator-runtime";
+import { FaCalendarAlt, 
+    FaGlobeAmericas, 
+    FaEdit, 
+    FaTicketAlt,
+    FaImage,
+    FaInfoCircle } from 'react-icons/fa';
 
 function EditEvent(props) {
     const [event, setEvent] = useState(null);
@@ -27,7 +33,7 @@ function EditEvent(props) {
             return null;
         } else {
             window.scrollTo(0,0);
-            return <ul className="login-errors-list">{props.errors.map((error,idx)=>(<li key={idx}>{error}</li>))}</ul>
+            return <ul className="create-errors-list">{props.errors.map((error,idx)=>(<li key={idx}>{error}</li>))}</ul>
         } 
     }
 
@@ -83,7 +89,10 @@ function EditEvent(props) {
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Event Title</div>
+                            <div>
+                                <FaInfoCircle /> &nbsp;
+                                Event Title
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -111,7 +120,10 @@ function EditEvent(props) {
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Location</div>
+                            <div>
+                                <FaGlobeAmericas /> &nbsp;
+                                Location
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -129,7 +141,10 @@ function EditEvent(props) {
 
                     <div className="create-desc-group">
                         <div className="create-section-header">
-                            <div>Date and Time</div>
+                            <div>
+                                <FaCalendarAlt /> &nbsp;
+                                Date and Time
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -164,7 +179,10 @@ function EditEvent(props) {
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Price</div>
+                            <div>
+                                <FaTicketAlt /> &nbsp;
+                                Price
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -182,7 +200,10 @@ function EditEvent(props) {
 
                     <div className="create-desc-group">
                         <div className="create-section-header">
-                            <div>Description</div>
+                            <div>
+                                <FaEdit /> &nbsp;
+                                Description
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -190,13 +211,16 @@ function EditEvent(props) {
                             </div>
                         </div>
                         <div className="form-create-structure">
-                            <textarea className="input-create-inner-ta" rows="8" cols="135" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+                            <textarea className="input-create-inner-ta" rows="8" cols="135" placeholder="Add some details" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
                         </div>
                     </div>
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Photo</div>
+                            <div>
+                                <FaImage /> &nbsp;
+                                Photo
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -204,8 +228,8 @@ function EditEvent(props) {
                             </div>
                         </div>
                         <div className="form-create-structure">
-                            <div className="teststruct">
-                                <input type="file" className="testput" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
+                            <div className="teststructphoto">
+                                <input type="file" className="testputphoto" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
                             </div>
                         </div>
                     </div>
@@ -267,7 +291,7 @@ function EditEvent(props) {
                    
                     <div className="submit-event">
                             <button className="submit-btn">
-                                Edit Event
+                                Update Event
                             </button>     
                     </div>
                 </form>

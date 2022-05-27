@@ -2,6 +2,14 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import NavbarContainer from "../navbar/navbar_container";
+import { FaCalendarAlt, 
+    FaGlobeAmericas, 
+    FaEdit, 
+    FaTicketAlt,
+    FaImage,
+    FaInfoCircle } from 'react-icons/fa';
+
+
 
 
 function CreateEvent(props) {
@@ -23,7 +31,7 @@ function CreateEvent(props) {
             return null;
         } else {
             window.scrollTo(0,0);
-            return <ul className="login-errors-list">{props.errors.map((error,idx)=>(<li key={idx}>{error}</li>))}</ul>
+            return <ul className="create-errors-list">{props.errors.map((error,idx)=>(<li key={idx}>{error}</li>))}</ul>
         } 
     }
 
@@ -69,7 +77,6 @@ function CreateEvent(props) {
         <div>
             <NavbarContainer />
 
-            {handleErrors()}
 
             <div className="create-form-container">
                 <div className="create-form-header">
@@ -77,11 +84,15 @@ function CreateEvent(props) {
                         Create Your Event
                     </div>
                 </div>
+                {handleErrors()}
                 <form onSubmit={handleSubmit} className="form-struct">
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Event Title</div>
+                            <div>
+                                <FaInfoCircle /> &nbsp;
+                                Event Title
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -109,7 +120,10 @@ function CreateEvent(props) {
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Location</div>
+                            <div>
+                                <FaGlobeAmericas /> &nbsp;
+                                Location
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -127,7 +141,10 @@ function CreateEvent(props) {
 
                     <div className="create-desc-group">
                         <div className="create-section-header">
-                            <div>Date and Time</div>
+                            <div>
+                                <FaCalendarAlt /> &nbsp;
+                                Date and Time
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -162,7 +179,10 @@ function CreateEvent(props) {
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Price</div>
+                            <div>
+                                <FaTicketAlt /> &nbsp;
+                                Price
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -180,7 +200,10 @@ function CreateEvent(props) {
 
                     <div className="create-desc-group">
                         <div className="create-section-header">
-                            <div>Description</div>
+                            <div>
+                                <FaEdit /> &nbsp;
+                                Description
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -188,13 +211,16 @@ function CreateEvent(props) {
                             </div>
                         </div>
                         <div className="form-create-structure">
-                            <textarea className="input-create-inner-ta" rows="8" cols="135" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
+                            <textarea className="input-create-inner-ta" rows="8" cols="135" placeholder="Add some details" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
                         </div>
                     </div>
 
                     <div className="create-info-group">
                         <div className="create-section-header">
-                            <div>Photo</div>
+                            <div>
+                                <FaImage /> &nbsp;
+                                Photo
+                            </div>
                         </div>        
                         <div className="create-section-blurb">
                             <div>
@@ -208,61 +234,6 @@ function CreateEvent(props) {
                         </div>
                     </div>
 
-                    {/* <div className="create-info-group">
-                        <div className="create-section-header">
-                            <div>
-                                Description
-                            </div>
-                        </div>        
-                        <div className="form-create-structure">
-                            <div className="create-field-struct">
-                                <label className="input-create-outer">Description</label>
-                                <textarea className="input-create-inner-ta" rows="8" cols="135" placeholder="Write about your event" value={event.description} onChange={(e)=>setEvent({...event, description: e.target.value})}></textarea>
-                            </div>
-                        </div>
-                    </div> */}
-
-                    
-
-                    
-                    {/* <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Date (enter like "Fri, May 2, 2021")</label>
-                            <input type="text" className="input-create-inner" value={event.date} onChange={(e)=>setEvent({...event, date: e.target.value})}/>
-                        </div>
-                    </div>
-                    <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Event Starts (enter time like "7:00 AM")</label>
-                            <input type="text" className="input-create-inner" value={event.start_time} onChange={(e)=>setEvent({...event, start_time: e.target.value})}/>
-                        </div>
-                    </div>
-                    <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Event Ends (enter time and specify zone like "7:00 PM PDT")</label>
-                            <input type="text" className="input-create-inner" value={event.end_time} onChange={(e)=>setEvent({...event, end_time: e.target.value})}/>
-                        </div>
-                    </div>
-                    <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Venue location</label>
-                            <input type="text" placeholder="Where is it?" className="input-create-inner" value={event.address} onChange={(e)=>setEvent({...event, address: e.target.value})}/>
-                        </div>
-                    </div>
-                    <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Ticket Price($)</label>
-                            <input type="number" className="input-create-inner" value={event.price} onChange={(e)=>setEvent({...event, price: e.target.value})}/>
-                        </div>
-                    </div>
-
-                    <div className="form-create-structure">
-                        <div className="create-field-struct">
-                            <label className="input-create-outer">Event Photo</label>
-                            <input type="file" className="input-create-inner" onChange={e=> setEvent({...event, photoUrl: e.target.files[0]})}/>
-                        </div>
-                    </div> */}
-                   
                     <div className="submit-event">
                             <button className="submit-btn">
                                 Create Event

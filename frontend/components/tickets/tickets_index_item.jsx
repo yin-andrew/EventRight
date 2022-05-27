@@ -20,6 +20,7 @@ function TicketsIndexItem(props) {
             {/* {seep()} */}
             <div className="panel-image-container">
                 <Link to={`/events/${props.event[0].id}`}>
+                    <img src={window.testPhoto} className="show-photo-top" />
                     {/* <img src={props.event[0].photoUrl} className="test-img"alt="" /> */}
                 </Link>
             
@@ -33,18 +34,15 @@ function TicketsIndexItem(props) {
                         <div className="event-panel-date-time">{props.event[0].date}  {'\u2B24'} {props.event[0].start_time} </div>
                         <div className="event-panel-address">{props.event[0].address} </div>
                         <div className="event-panel-price"> Starts at ${props.event[0].price} </div>
-                        <div className="event-panel-creator">
-                            jeff
-                            <br />
-                            <br />
-                            30m followers
-                        </div>
+
                         <div className="tix-qty">
                             <div className="qty-disp">
                                 Qty: {props.ticket.quantity}
                             </div>
                             <div className="tix-cancel" onClick={()=>props.deleteTicket(props.ticket.id)}>
-                                Cancel Order
+                                <div>
+                                    Cancel Order
+                                </div>
                             </div>
                         </div>
 

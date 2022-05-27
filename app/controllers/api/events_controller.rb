@@ -20,7 +20,7 @@ class Api::EventsController < ApplicationController
         if @event.save
             render :show
         else
-            render json: ['failed to create'], status: 422
+            render json: ['please fill in all fields!'], status: 422
         end
     end
 
@@ -29,7 +29,7 @@ class Api::EventsController < ApplicationController
         if @event && @event.creator_id == current_user.id && @event.update(event_params)
             render :show
         else
-            render json: ['failed to update'], status: 422
+            render json: ['please fill in all fields and re-upload photo'], status: 422
         end
     end
     

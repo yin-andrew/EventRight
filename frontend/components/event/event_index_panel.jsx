@@ -17,6 +17,7 @@ function EventPanel(props) {
             {/* {seeL()} */}
             <div className="panel-image-container">
                 <Link to={`/events/${props.event.id}`}>
+                    <img src={window.testPhoto} className="show-photo-top" />
                     {/* <img src={props.event.photoUrl} className="test-img"alt="" /> */}
                 </Link>
             
@@ -30,9 +31,9 @@ function EventPanel(props) {
                         <div className="event-panel-date-time">{props.event.date}  {'\u2B24'} {props.event.start_time} </div>
                         <div className="event-panel-address">{props.event.address} </div>
                         <div className="event-panel-price"> Starts at ${props.event.price} </div>
-                        <div className="event-panel-creator">
+                        {/* <div className="event-panel-creator">
                             jeff
-                        </div>
+                        </div> */}
 
 
                     </div> 
