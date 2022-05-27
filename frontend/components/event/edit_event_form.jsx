@@ -22,7 +22,7 @@ function EditEvent(props) {
             console.log("fetched",fetchedEvent.event);
             delete fetchedEvent.event.photoUrl;
             await setEvent({...fetchedEvent.event, photoUrl: undefined});
-            console.log("event", event);
+            console.log("firstevent", event);
             // setEvent({...event, photoUrl: undefined});
             // setEvent({...event, photoUrl: null});
         }
@@ -64,9 +64,6 @@ function EditEvent(props) {
         e.preventDefault();
         
         const formData = new FormData();
-        if (event.photoUrl ==undefined || !event.photoUrl) {
-            props.updateEvent({});
-        }
 
         formData.append('event[id]', event.id);
         formData.append('event[title]', event.title);
@@ -77,13 +74,39 @@ function EditEvent(props) {
         formData.append('event[creator_id]', props.currentUser.id);
         formData.append('event[price]', event.price);
         formData.append('event[address]', event.address);
+    
+            
 
         if (event.photoUrl) {
             formData.append('event[photo]', event.photoUrl);
         } 
 
+        if (!event || event.photoUrl ==undefined || !event.photoUrl) {
+            console.log("here");
+            props.updateEvent({});
+            return
+        }
+
         console.log('form:', formData);
         props.updateEvent(formData).then(()=>props.history.push(`/events/${event.id}`));
+        
+
+        // formData.append('event[id]', event.id);
+        // formData.append('event[title]', event.title);
+        // formData.append('event[description]', event.description);
+        // formData.append('event[date]', event.date);
+        // formData.append('event[start_time]', event.start_time);
+        // formData.append('event[end_time]', event.end_time);
+        // formData.append('event[creator_id]', props.currentUser.id);
+        // formData.append('event[price]', event.price);
+        // formData.append('event[address]', event.address);
+
+        // if (event.photoUrl) {
+        //     formData.append('event[photo]', event.photoUrl);
+        // } 
+
+        // console.log('form:', formData);
+        // props.updateEvent(formData).then(()=>props.history.push(`/events/${event.id}`));
         //push to home and render new event in the home page
     };
 
