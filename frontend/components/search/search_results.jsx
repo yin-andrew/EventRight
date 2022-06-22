@@ -4,6 +4,8 @@ import EventIndexPanelContainer from "../event/event_index_panel_container";
 
 function SearchResults(props) {
 
+    useEffect(()=> props.clearEventErrors(), []);
+
     useEffect(()=> {
         
         return ()=> {

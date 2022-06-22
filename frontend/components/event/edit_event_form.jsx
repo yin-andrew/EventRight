@@ -30,9 +30,6 @@ function EditEvent(props) {
         // console.log("newstate", event);
     }, []);
 
-    const printo  = () => {
-        // console.log("this is the event", event);
-    }
     
     //events creation errors handling??
 
