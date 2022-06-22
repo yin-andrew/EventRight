@@ -13,23 +13,16 @@ import { FaCalendarAlt,
 function EditEvent(props) {
     const [event, setEvent] = useState(null);
 
-    // useEffect(()=>{props.fetchEvent(props.match.params.eventId)})
-    useEffect(()=>{props.clearEventErrors()},[]);
-    
     useEffect(()=>{
         const fetchdata = async ()=>{
             let fetchedEvent = await props.fetchEvent(props.match.params.eventId);
-            // console.log("fetched",fetchedEvent.event);
             delete fetchedEvent.event.photoUrl;
             await setEvent({...fetchedEvent.event, photoUrl: undefined});
-            // console.log("firstevent", event);
-            // setEvent({...event, photoUrl: undefined});
-            // setEvent({...event, photoUrl: null});
         }
         fetchdata();
-        // console.log("newstate", event);
     }, []);
-
+    
+    useEffect(()=>{props.clearEventErrors()},[]);
     
     //events creation errors handling??
 

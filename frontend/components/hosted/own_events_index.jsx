@@ -7,10 +7,6 @@ function OwnEventsIndex(props) {
 
     useEffect(()=>{props.fetchEvents()}, []);
 
-    const printprops = () => {
-        console.log("yepper stepper", props);
-    }
-
     const userEvents = props.events.filter(event=>{
         return event.creator_id === props.currentUser.id;
     });
