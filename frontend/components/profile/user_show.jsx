@@ -2,13 +2,7 @@ import React, {useState} from "react";
 import { Link, Redirect } from "react-router-dom";
 import NavBarContainer from "../navbar/navbar_container";
 import EventIndexContainer from "../event/event_index_container";
-
-
-/*
-show_page: have user information such as firstname lastname etc.
-pre fill form with existing info and render changes as needed
-tabs on the sidebar? 
-*/
+import Footer from "../footer/footer";
 
 function userShow(props) {
 
@@ -23,6 +17,7 @@ function userShow(props) {
             <div className="home-index-container">
                 <EventIndexContainer />
             </div>
+            <Footer />
         </div>
     );
 }
