@@ -8,7 +8,7 @@ EventRight is a full stack clone of [Eventbrite](https://www.eventbrite.com/) wh
 EventRight is built with a React/Redux frontend and a Ruby on Rails backend. The styling is done with html and vanilla css. The database of choice was PostgresSQL but the images for events are stored on AWS S3 facilitated by Active Storage and the 'aws-s3-sdk' gem. Leveraged functional components and hooks for better logic and readability.   
 
 ## Welcome Page
-
+![homepage](./docs/homepage.jpg)
 ## Technical Details
 
 ### Async/Await to setState
