@@ -46,7 +46,7 @@ function LikesIndexItem(props) {
                         <div className="likes-item-photo-container">
                             <Link to={`/events/${props.event.id}`}>
                                 {/* <img src={window.testPhoto} alt="" className="likes-photo"/> */}
-                            <img src={props.event.photoUrl} alt="" className="likes-photo"/>
+                                <img src={props.event.photoUrl} alt="" className="likes-photo"/>
                             </Link>
                         </div>
                         <div className="likes-item-status">

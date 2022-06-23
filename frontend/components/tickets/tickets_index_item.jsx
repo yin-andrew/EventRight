@@ -3,16 +3,10 @@ import { Link } from "react-router-dom";
 
 function TicketsIndexItem(props) {
 
-
     useEffect(()=>{props.fetchTickets()}, []);
-    // useEffect(()=>{props.fetchEvents()}, [])
 
     if (!props.ticket) {
         return null;
-    }
-
-    const seep = () => {
-        console.log("props", props);
     }
 
     return (

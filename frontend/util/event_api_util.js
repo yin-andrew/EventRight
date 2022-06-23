@@ -13,15 +13,16 @@ export const fetchEvent = eventId => (
     })
 );
 
-export const createEvent = event => (
-    $.ajax({
+export const createEvent = event => {
+    console.log("event", event);
+    return $.ajax({
         method: 'POST',
         url: '/api/events',
-        data: event ,
+        data: event,
         processData: false,
         contentType: false
     })
-);
+};
 
 export const updateEvent = event => (
     $.ajax({
