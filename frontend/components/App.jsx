@@ -8,8 +8,6 @@ import GreetingContainer from './greetings/greeting_container';
 import NavbarContainer from './navbar/navbar_container';
 import EventShowContainer from './event/events_show_container';
 import EventIndexContainer from './event/event_index_container';
-import EventPanel from './event/event_index_panel';
-import CreateEvent from './event/create_event_form';
 import CreateEventFormContainer from './event/create_event_form_container';
 import EditEventFormContainer from './event/edit_event_form_container';
 import EventShow from './event/event_show';
