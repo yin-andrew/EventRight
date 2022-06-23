@@ -1,6 +1,6 @@
 # EventRight
 
-EventRight is a web application where users can find local events to attend. EventRight is a full stack clone of [Eventbrite](https://www.eventbrite.com/) 
+EventRight is a full stack clone of [Eventbrite](https://www.eventbrite.com/) where users can find events in San Francisco to attend. 
 
 [Live link to EventRight](https://event-right.herokuapp.com/#/)
 
@@ -26,3 +26,8 @@ useEffect(()=>{
     fetchdata();
 }, []);
 ```
+### Features
+* Create, update, and delete hosted events
+* Like events and view them on personal profile
+* Search for events by title or description 
+* Register for events and view registered events on personal profile
