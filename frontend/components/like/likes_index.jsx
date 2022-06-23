@@ -18,9 +18,7 @@ function LikesIndex(props) {
 
     
     useEffect(()=>{props.fetchLikes()}, []);
-    // useEffect(()=>{console.log("got likes", props)},[]);
     useEffect(()=>{props.fetchEvents()}, []);
-    // useEffect(()=>{console.log("gotevents", props)},[]);
 
     if (!props.likes){
         return null;

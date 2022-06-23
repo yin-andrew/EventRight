@@ -6,11 +6,6 @@ function ticketForm(props) {
 
     const event = props.events[parseInt(props.modal)]
 
-    const ye = () => {
-        console.log("this is the event?", event);
-        console.log('initial ticket', ticket);
-    }
-
     const handleSubmit = () => {
         props.createTicket(ticket)
         .then(()=> props.closeModal());     
