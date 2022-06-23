@@ -19,9 +19,14 @@ function Navbar(props) {
         // props.logout().then(()=> <Redirect to='/' />);
         //props.history doesn't exist? 
         props.clearLikes();
-        props.logout().then(()=>{
+        const logout = async () => {
+            await props.logout();
             props.history.push('/login');
-        });
+        }
+        logout();
+        // props.logout().then(()=>{
+        //     props.history.push('/login');
+        // });
     }
 
     if (!props) {

@@ -14,8 +14,8 @@ function TicketsIndexItem(props) {
             {/* {seep()} */}
             <div className="panel-image-container">
                 <Link to={`/events/${props.event[0].id}`}>
-                    <img src={window.testPhoto} className="show-photo-top" />
-                    {/* <img src={props.event[0].photoUrl} className="test-img"alt="" /> */}
+                    {/* <img src={window.testPhoto} className="show-photo-top" /> */}
+                    <img src={props.event[0].photoUrl} className="test-img"alt="" />
                 </Link>
             
             </div>
