@@ -2,7 +2,6 @@ import { RECEIVE_EVENT, RECIEVE_EVENT_ERRORS, REMOVE_EVENT_ERRORS } from "../act
 
 const eventsErrorsReducer = (state=[], action) => {
     Object.freeze(state);
-    console.log("action", action);
     switch(action.type) {
         case RECIEVE_EVENT_ERRORS:
             if (action.errors === undefined) {
